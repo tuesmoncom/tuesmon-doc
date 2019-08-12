@@ -1,0 +1,5 @@
+To delete issues send a DELETE specifying the issue id in the url
+
+include::../generated/issues-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

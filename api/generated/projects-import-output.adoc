@@ -1,0 +1,7 @@
+[source,json]
+----
+{
+    "_error_message": "Request was throttled.Expected available in 55 seconds.",
+    "_error_type": "tuesmon.base.exceptions.Throttled"
+}
+----

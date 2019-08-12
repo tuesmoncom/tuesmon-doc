@@ -1,0 +1,15 @@
+To create user story statuses send a POST request with the following data:
+
+- *color*: in hexadecimal
+- *is_closed*: (true|false)
+- *name* (required)
+- *order*: integer
+- *project*: (required): project id
+- *wip_limit*: integer representing the max number of user stories in this status
+
+
+include::../generated/user-story-statuses-create-cmd.adoc[]
+
+include::../generated/user-story-statuses-simple-create-cmd.adoc[]
+
+When the creation is successful, the HTTP response is a 201 Created and the response body is a JSON link:#object-userstory-status-detail[user story status detail object]

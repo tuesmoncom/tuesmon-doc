@@ -1,0 +1,8 @@
+To get an issue send a GET request specifying the issue reference and one of the following parameters:
+
+- project (project id)
+- project__slug
+
+include::../generated/issues-get-by-ref-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-issue-detail-get[issue detail (GET) object]

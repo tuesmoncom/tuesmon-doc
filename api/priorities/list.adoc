@@ -1,0 +1,11 @@
+To list priorities send a GET request with the following parameters:
+
+include::../generated/priorities-list-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON list of link:#object-priority-detail[priority detail objects]
+
+The results can be filtered using the following parameters:
+
+- *project*: project id
+
+include::../generated/priorities-filtered-list-cmd.adoc[]

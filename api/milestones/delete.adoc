@@ -1,0 +1,5 @@
+To delete milestones send a DELETE specifying the milestone id in the url
+
+include::../generated/milestones-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

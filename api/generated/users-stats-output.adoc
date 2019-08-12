@@ -1,0 +1,15 @@
+[source,json]
+----
+{
+    "roles": [
+        "Stakeholder",
+        "UX",
+        "Back",
+        "Front",
+        "Product Owner"
+    ],
+    "total_num_closed_userstories": 1,
+    "total_num_contacts": 10,
+    "total_num_projects": 10
+}
+----

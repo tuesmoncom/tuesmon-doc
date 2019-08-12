@@ -1,0 +1,5 @@
+To edit a project modules configuration send a PATCH specifying the project id in the url.
+
+include::../generated/projects-modules-patch-cmd.adoc[]
+
+When edition succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

@@ -1,0 +1,13 @@
+To create priorities send a POST request with the following data:
+
+- *color*: in hexadecimal
+- *name* (required)
+- *order*: integer
+- *project*: (required): project id
+
+
+include::../generated/priorities-create-cmd.adoc[]
+
+include::../generated/priorities-simple-create-cmd.adoc[]
+
+When the creation is successful, the HTTP response is a 201 Created and the response body is a JSON link:#object-priority-detail[priority detail object]

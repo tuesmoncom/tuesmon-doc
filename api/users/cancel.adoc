@@ -1,0 +1,5 @@
+To cancel a user account send a POST with the following data
+
+include::../generated/users-cancel-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

@@ -1,0 +1,5 @@
+To delete project template send a DELETE specifying the project template id in the url
+
+include::../generated/project-templates-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

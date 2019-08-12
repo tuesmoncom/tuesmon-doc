@@ -1,0 +1,115 @@
+[source,json]
+----
+[
+    {
+        "bidi": false,
+        "code": "ca",
+        "name": "Catal\u00e0"
+    },
+    {
+        "bidi": false,
+        "code": "de",
+        "name": "Deutsch"
+    },
+    {
+        "bidi": false,
+        "code": "en",
+        "name": "English (US)"
+    },
+    {
+        "bidi": false,
+        "code": "es",
+        "name": "Espa\u00f1ol"
+    },
+    {
+        "bidi": false,
+        "code": "eu",
+        "name": "Euskara"
+    },
+    {
+        "bidi": true,
+        "code": "fa",
+        "name": "\u0641\u0627\u0631\u0633\u06cc\u200f"
+    },
+    {
+        "bidi": false,
+        "code": "fi",
+        "name": "Suomi"
+    },
+    {
+        "bidi": false,
+        "code": "fr",
+        "name": "Fran\u00e7ais"
+    },
+    {
+        "bidi": true,
+        "code": "he",
+        "name": "\u05e2\u05d1\u05e8\u05d9\u05ea\u200f"
+    },
+    {
+        "bidi": false,
+        "code": "it",
+        "name": "Italiano"
+    },
+    {
+        "bidi": false,
+        "code": "ja",
+        "name": "\u65e5\u672c\u8a9e"
+    },
+    {
+        "bidi": false,
+        "code": "ko",
+        "name": "\ud55c\uad6d\uc5b4"
+    },
+    {
+        "bidi": false,
+        "code": "nb",
+        "name": "Norsk (bokm\u00e5l)"
+    },
+    {
+        "bidi": false,
+        "code": "nl",
+        "name": "Nederlands"
+    },
+    {
+        "bidi": false,
+        "code": "pl",
+        "name": "Polski"
+    },
+    {
+        "bidi": false,
+        "code": "pt-br",
+        "name": "Portugu\u00eas (Brasil)"
+    },
+    {
+        "bidi": false,
+        "code": "ru",
+        "name": "\u0420\u0443\u0441\u0441\u043a\u0438\u0439"
+    },
+    {
+        "bidi": false,
+        "code": "sv",
+        "name": "Svenska"
+    },
+    {
+        "bidi": false,
+        "code": "tr",
+        "name": "T\u00fcrk\u00e7e"
+    },
+    {
+        "bidi": false,
+        "code": "uk",
+        "name": "\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430"
+    },
+    {
+        "bidi": false,
+        "code": "zh-hans",
+        "name": "\u4e2d\u6587(\u7b80\u4f53)"
+    },
+    {
+        "bidi": false,
+        "code": "zh-hant",
+        "name": "\u4e2d\u6587(\u9999\u6e2f)"
+    }
+]
+----

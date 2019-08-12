@@ -1,0 +1,13 @@
+To add a user into a project via invitation send a POST request containing the following data:
+
+- *type* with value "private"
+- *existing* (required): indicates if the user is member or not
+- *token* (required): generated when creating a project's membership
+- *username* (required)
+- *password* (required)
+- *email* (required only if the user doesn't exist in the platform)
+- *full_name* (required only if the user doesn't exist in the platform)
+
+include::../generated/register-user-cmd.adoc[]
+
+When the registration is successful, the HTTP response is a 201 CREATED and the response body is a JSON link:#object-auth-user-detail[user auth detail object]

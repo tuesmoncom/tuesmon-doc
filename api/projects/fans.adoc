@@ -1,0 +1,5 @@
+To get the list of fans from a project send a GET request specifying the project id in the url
+
+include::../generated/projects-fans-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON list of link:#object-project-voter-detail[project voter object]

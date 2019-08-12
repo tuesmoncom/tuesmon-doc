@@ -1,0 +1,5 @@
+To get the list of watchers from a task send a GET request specifying the task id in the url
+
+include::../generated/tasks-watchers-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON list of link:#object-userstory-watcher-detail[task watcher object]

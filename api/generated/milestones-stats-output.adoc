@@ -1,0 +1,118 @@
+[source,json]
+----
+{
+    "completed_points": [],
+    "completed_tasks": 2,
+    "completed_userstories": 0,
+    "days": [
+        {
+            "day": "2019-02-14",
+            "name": 14,
+            "open_points": 107.0,
+            "optimal_points": 107.0
+        },
+        {
+            "day": "2019-02-15",
+            "name": 15,
+            "open_points": 107.0,
+            "optimal_points": 99.86666666666666
+        },
+        {
+            "day": "2019-02-16",
+            "name": 16,
+            "open_points": 96.0,
+            "optimal_points": 92.73333333333332
+        },
+        {
+            "day": "2019-02-17",
+            "name": 17,
+            "open_points": 96.0,
+            "optimal_points": 85.59999999999998
+        },
+        {
+            "day": "2019-02-18",
+            "name": 18,
+            "open_points": 96.0,
+            "optimal_points": 78.46666666666664
+        },
+        {
+            "day": "2019-02-19",
+            "name": 19,
+            "open_points": 96.0,
+            "optimal_points": 71.3333333333333
+        },
+        {
+            "day": "2019-02-20",
+            "name": 20,
+            "open_points": 96.0,
+            "optimal_points": 64.19999999999996
+        },
+        {
+            "day": "2019-02-21",
+            "name": 21,
+            "open_points": 96.0,
+            "optimal_points": 57.06666666666663
+        },
+        {
+            "day": "2019-02-22",
+            "name": 22,
+            "open_points": 96.0,
+            "optimal_points": 49.933333333333294
+        },
+        {
+            "day": "2019-02-23",
+            "name": 23,
+            "open_points": 96.0,
+            "optimal_points": 42.79999999999996
+        },
+        {
+            "day": "2019-02-24",
+            "name": 24,
+            "open_points": 96.0,
+            "optimal_points": 35.66666666666663
+        },
+        {
+            "day": "2019-02-25",
+            "name": 25,
+            "open_points": 96.0,
+            "optimal_points": 28.533333333333296
+        },
+        {
+            "day": "2019-02-26",
+            "name": 26,
+            "open_points": 96.0,
+            "optimal_points": 21.399999999999963
+        },
+        {
+            "day": "2019-02-27",
+            "name": 27,
+            "open_points": 85.0,
+            "optimal_points": 14.26666666666663
+        },
+        {
+            "day": "2019-02-28",
+            "name": 28,
+            "open_points": 85.0,
+            "optimal_points": 7.1333333333332964
+        },
+        {
+            "day": "2019-03-01",
+            "name": 1,
+            "open_points": 85.0,
+            "optimal_points": -3.730349362740526e-14
+        }
+    ],
+    "estimated_finish": "2019-03-01",
+    "estimated_start": "2019-02-14",
+    "iocaine_doses": 0,
+    "name": "Sprint 2019-2-14",
+    "total_points": {
+        "1": 58.0,
+        "2": 9.0,
+        "3": 30.0,
+        "4": 10.0
+    },
+    "total_tasks": 13,
+    "total_userstories": 3
+}
+----

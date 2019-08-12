@@ -1,0 +1,5 @@
+To remove a vote from an issue send a POST specifying the issue id in the url
+
+include::../generated/issues-downvote-cmd.adoc[]
+
+When remove of the vote succeeded, the HTTP response is a 200 OK with an empty body response

@@ -1,0 +1,8 @@
+To update the order of multiple priorities at the same time send a POST request with the following data:
+
+- *project* (required)
+- *bulk_priorities*: list where each element is a list, the first element is the status id and the second the new order
+
+include::../generated/priorities-bulk-update-order-cmd.adoc[]
+
+When the update is successful, the HTTP response is a 204 NO CONTENT with an empty body response

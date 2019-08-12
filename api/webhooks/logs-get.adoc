@@ -1,0 +1,5 @@
+To get a webhook log send a GET request specifying the webhook log id in the url
+
+include::../generated/webhooklogs-get-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-webhook-log-detail[webhook log detail object]

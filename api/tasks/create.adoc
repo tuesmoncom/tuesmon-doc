@@ -1,0 +1,25 @@
+To create tasks send a POST request with the following data:
+
+- *assigned_to*: user id
+- *blocked_note*: reason why the task is blocked
+- *description*: string
+- *is_blocked*: boolean
+- *is_closed*: boolean
+- *milestone*: milestone id
+- *project* (required): project id
+- *user_story*: user story id
+- *status*: status id
+- *subject* (required)
+- *tags*: array of strings
+- *us_order*: order in the user story,
+- *taskboard_order*: order in the taskboard,
+- *is_iocaine*: boolean,
+- *external_reference*: tuple of ("service", serviceId),
+- *watchers*: array of watcher id's
+
+
+include::../generated/tasks-create-cmd.adoc[]
+
+include::../generated/tasks-simple-create-cmd.adoc[]
+
+When the creation is successful, the HTTP response is a 201 Created and the response body is a JSON link:#object-task-detail[task detail object]

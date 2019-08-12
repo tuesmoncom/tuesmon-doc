@@ -1,0 +1,21 @@
+To list milestones send a GET request with the following parameters:
+
+include::../generated/milestones-list-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON list of link:#object-milestone-detail[milestone detail objects]
+
+The results can be filtered using the following parameters:
+
+- *project*: project ID
+- *closed*: `true` to get only closed milestones or `false` to get only opened ones.
+
+include::../generated/milestones-filtered-list-cmd.adoc[]
+
+[NOTE]
+===============================
+When you filter milestones by project ID (`/api/v1/milestones?project=_<projectID>_`) the response has two new headers:
+
+- `*Tuesmon-Info-Total-Opened-Milestones*`: the numer of opened milestones for this project.
+- `*Tuesmon-Info-Total-Closed-Milestones*`: the numer of closed milestones for this project.
+
+===============================

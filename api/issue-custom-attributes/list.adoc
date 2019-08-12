@@ -1,0 +1,11 @@
+To list issue custom attributes send a GET request with the following parameters:
+
+include::../generated/issues-custom-attributes-list-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON list of link:#object-issue-custom-attribute-detail[issue custom attribute detail objects]
+
+The results can be filtered using the following parameters:
+
+- *project*: project id
+
+include::../generated/issues-custom-attributes-filtered-list-cmd.adoc[]

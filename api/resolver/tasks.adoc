@@ -1,0 +1,10 @@
+To resolve the id of a task send a GET request with the following parameters:
+
+- *project* (required): the project slug trying to be resolved
+- *task* (required): the task ref trying to be resolved
+
+include::../generated/resolver-task-cmd.adoc[]
+
+The response body is a JSON object containing the project and the task ids
+
+include::../generated/resolver-task-output.adoc[]

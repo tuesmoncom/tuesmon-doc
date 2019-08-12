@@ -1,0 +1,5 @@
+To get a user story custom attribute send a GET request specifying the user story custom attribute id in the url
+
+include::../generated/user-stories-custom-attributes-get-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-userstory-custom-attribute-detail[user story custom attribute detail object]

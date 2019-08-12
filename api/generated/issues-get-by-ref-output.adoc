@@ -1,0 +1,91 @@
+[source,json]
+----
+{
+    "assigned_to": 9,
+    "assigned_to_extra_info": {
+        "big_photo": null,
+        "full_name_display": "Catalina Fernandez",
+        "gravatar_id": "9971a763f5dfc5cbd1ce1d2865b4fcfa",
+        "id": 9,
+        "is_active": true,
+        "photo": null,
+        "username": "user3"
+    },
+    "attachments": [],
+    "blocked_note": "",
+    "blocked_note_html": "",
+    "comment": "",
+    "created_date": "2019-04-10T10:34:37.089Z",
+    "description": "Facere aspernatur sit similique. Atque at porro a nobis in ex quis ab, commodi deleniti dolorem voluptatibus quod accusantium eaque cum reiciendis numquam nulla exercitationem, vitae tempora provident, minima ullam vero incidunt harum error dicta consequatur soluta?",
+    "description_html": "<p>Facere aspernatur sit similique. Atque at porro a nobis in ex quis ab, commodi deleniti dolorem voluptatibus quod accusantium eaque cum reiciendis numquam nulla exercitationem, vitae tempora provident, minima ullam vero incidunt harum error dicta consequatur soluta?</p>",
+    "due_date": null,
+    "due_date_reason": "",
+    "due_date_status": "not_set",
+    "external_reference": null,
+    "finished_date": null,
+    "generated_user_stories": null,
+    "id": 24,
+    "is_blocked": false,
+    "is_closed": false,
+    "is_voter": false,
+    "is_watcher": false,
+    "milestone": null,
+    "modified_date": "2019-04-10T10:34:37.238Z",
+    "neighbors": {
+        "next": {
+            "id": 23,
+            "ref": 66,
+            "subject": "Experimental: modular file types"
+        },
+        "previous": {
+            "id": 106,
+            "ref": 85,
+            "subject": "Issue 1"
+        }
+    },
+    "owner": 14,
+    "owner_extra_info": {
+        "big_photo": null,
+        "full_name_display": "Miguel Molina",
+        "gravatar_id": "dce0e8ed702cd85d5132e523121e619b",
+        "id": 14,
+        "is_active": true,
+        "photo": null,
+        "username": "user8"
+    },
+    "priority": 3,
+    "project": 1,
+    "project_extra_info": {
+        "id": 1,
+        "logo_small_url": null,
+        "name": "Project Example 0",
+        "slug": "project-0"
+    },
+    "ref": 67,
+    "severity": 1,
+    "status": 2,
+    "status_extra_info": {
+        "color": "#5E8C6A",
+        "is_closed": false,
+        "name": "In progress"
+    },
+    "subject": "Create testsuite with matrix builds",
+    "tags": [
+        [
+            "ullam",
+            "#98ad13"
+        ]
+    ],
+    "total_voters": 2,
+    "total_watchers": 5,
+    "type": 2,
+    "version": 1,
+    "watchers": [
+        10,
+        3,
+        6,
+        1,
+        9
+    ]
+}
+----

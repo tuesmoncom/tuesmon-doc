@@ -1,0 +1,42 @@
+[source,json]
+----
+{
+    "assigned_to": 9,
+    "assigned_to_extra_info": {
+        "big_photo": null,
+        "full_name_display": "Catalina Fernandez",
+        "gravatar_id": "9971a763f5dfc5cbd1ce1d2865b4fcfa",
+        "id": 9,
+        "is_active": true,
+        "photo": null,
+        "username": "user3"
+    },
+    "created_date": "2019-04-10T10:38:10.164Z",
+    "description": null,
+    "id": 24,
+    "is_private": null,
+    "is_voter": true,
+    "is_watcher": false,
+    "logo_small_url": null,
+    "name": null,
+    "project": 7,
+    "project_blocked_code": "blocked-by-staff",
+    "project_is_private": false,
+    "project_name": "Project Example 6",
+    "project_slug": "project-6",
+    "ref": 106,
+    "slug": null,
+    "status": "Ready",
+    "status_color": "#ff8a84",
+    "subject": "Support for bulk actions",
+    "tags_colors": [
+        {
+            "color": null,
+            "name": "non"
+        }
+    ],
+    "total_voters": 6,
+    "total_watchers": 1,
+    "type": "epic"
+}
+----

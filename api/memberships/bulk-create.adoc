@@ -1,0 +1,13 @@
+To create multiple memberships at the same time send a POST request with the following data:
+
+* *project_id* (required)
+* *bulk_memberships* (required): a list of dicts with
+** *role_id*
+** *username*: user username or email
+* *invitation_extra_text*: string
+
+
+include::../generated/memberships-bulk-create-cmd.adoc[]
+
+
+When the creation is successful, the HTTP response is a 200 OK and the response body is a JSON list of link:#object-membership-detail[membership detail object]

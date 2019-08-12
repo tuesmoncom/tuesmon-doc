@@ -1,0 +1,5 @@
+To get an issue type send a GET request specifying the issue type id in the url
+
+include::../generated/issue-types-get-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-issue-type-detail[issue type detail object]

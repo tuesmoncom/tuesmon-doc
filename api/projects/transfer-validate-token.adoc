@@ -1,0 +1,7 @@
+To check if a transfer token for one project is valid for your user send a POST request specifying the project id in the url and containing the following data:
+
+- *token*: valid transfer token received by email.
+
+include::../generated/projects-transfer-validate-token-cmd.adoc[]
+
+The HTTP response is a 200 OK with an empty body response

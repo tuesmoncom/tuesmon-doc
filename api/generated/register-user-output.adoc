@@ -1,0 +1,7 @@
+[source,json]
+----
+{
+    "_error_message": "You must accept our terms of service and privacy policy",
+    "_error_type": "tuesmon.base.exceptions.BadRequest"
+}
+----

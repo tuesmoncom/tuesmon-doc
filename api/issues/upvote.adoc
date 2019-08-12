@@ -1,0 +1,5 @@
+To vote issues send a POST specifying the issue id in the url
+
+include::../generated/issues-upvote-cmd.adoc[]
+
+When vote succeeded, the HTTP response is a 200 OK with an empty body response

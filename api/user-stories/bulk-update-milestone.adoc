@@ -1,0 +1,11 @@
+To update the sprint of multiple user stories at the same time send a POST request with the following data:
+
+- *project_id* (required)
+- *milestone_id* (required)
+- *bulk_stories*: list where each element is a json object with two attributes, the user story id and the new order
+
+
+include::../generated/user-stories-bulk-update-milestone-cmd.adoc[]
+
+
+When the update is successful, the HTTP response is a 204 NO CONTENT with an empty body response

@@ -1,0 +1,10 @@
+To resolve the id of an issue send a GET request with the following parameters:
+
+- *project* (required): the project slug trying to be resolved
+- *issue* (required): the issue ref trying to be resolved
+
+include::../generated/resolver-issue-cmd.adoc[]
+
+The response body is a JSON object containing the project and the issue ids
+
+include::../generated/resolver-issue-output.adoc[]

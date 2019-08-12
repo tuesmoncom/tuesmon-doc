@@ -1,0 +1,11 @@
+To list points send a GET request with the following parameters:
+
+include::../generated/points-list-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON list of link:#object-point-detail[point detail objects]
+
+The results can be filtered using the following parameters:
+
+- *project*: project id
+
+include::../generated/points-filtered-list-cmd.adoc[]

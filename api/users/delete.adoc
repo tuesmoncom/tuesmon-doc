@@ -1,0 +1,5 @@
+To delete users send a DELETE specifying the user id in the url
+
+include::../generated/users-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

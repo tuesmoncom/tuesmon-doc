@@ -1,0 +1,5 @@
+To delete wiki link send a DELETE specifying the wiki link id in the url
+
+include::../generated/wiki-links-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

@@ -1,0 +1,5 @@
+To resend a request from a webhook log send a POST request specifying the webhook log id in the url
+
+include::../generated/webhooklogs-resend-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-webhook-log-detail[webhook log detail object] with the resault of the resend.

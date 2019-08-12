@@ -1,0 +1,5 @@
+To delete user storage data send a DELETE specifying the user storage key in the url
+
+include::../generated/user-storage-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

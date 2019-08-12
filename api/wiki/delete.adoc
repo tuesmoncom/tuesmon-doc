@@ -1,0 +1,5 @@
+To delete wiki page send a DELETE specifying the wiki page id in the url
+
+include::../generated/wiki-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

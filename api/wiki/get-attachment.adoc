@@ -1,0 +1,5 @@
+To get an wiki page attachment send a GET request specifying the wiki page attachment id in the url
+
+include::../generated/wiki-attachments-get-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-attachment-detail[attachment detail object]

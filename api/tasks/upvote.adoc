@@ -1,0 +1,5 @@
+To vote tasks send a POST request specifying the task id in the url
+
+include::../generated/tasks-upvote-cmd.adoc[]
+
+The HTTP response is a 200 OK with an empty body response

@@ -1,0 +1,68 @@
+To create project templates send a POST request with the following data:
+
+* *name* (required): string
+* *slug*: slug
+* *description* (required): string
+* *default_owner_role* (required):
+* *is_backlog_activated*: boolean
+* *is_kanban_activated*: boolean
+* *is_wiki_activated*: boolean
+* *is_issues_activated*: boolean
+* *videoconferences*: (talky|appear-in)
+* *videoconferences_extra_data*: string
+* *default_options*: a json with a list of objects with:
+** *points*: slug
+** *us_status*: slug
+** *task_status*: slug
+** *issue_status*: slug
+** *issue_type*: slug
+** *priority*: slug
+** *severity*: slug
+* *us_statuses*: a json with a list of objects with:
+** *name*: string
+** *slug*: slug
+** *is_closed*: boolean
+** *color*: #rgb color
+** *wip_limit*: integer or none
+** *order*: integer
+* *points*: a json with a list of objects with:
+** *name*: string
+** *value*: integer or none
+** *order*: integer
+* *task_statuses*: a json with a list of objects with:
+** *name*: string
+** *slug*: slug
+** *is_closed*: boolean
+** *color*: #rgb color
+** *order*: integer
+* *issue_statuses*: a json with a list of objects with:
+** *name*: string
+** *slug*: slug
+** *is_closed*: boolean
+** *color*: #rgb color
+** *order*: integer
+* *issue_types*: a json with a list of objects with:
+** *name*: string
+** *color*: #rgb color
+** *order*: integer
+* *priorities*: a json with a list of objects with:
+** *name*: string
+** *color*: #rgb color
+** *order*: integer
+* *severities*: a json with a list of objects with:
+** *name*: string
+** *color*: #rgb color
+** *order*: integer
+* *roles*: a json with a list of objects with:
+** *name*: string
+** *slug*: slug
+** *permissions*: list of permissions
+** *order*: integer
+** *computable*: boolean
+
+
+include::../generated/project-templates-create-cmd.adoc[]
+
+include::../generated/project-templates-simple-create-cmd.adoc[]
+
+When the creation is successful, the HTTP response is a 201 Created and the response body is a JSON link:#object-project-template-detail[project template detail object]

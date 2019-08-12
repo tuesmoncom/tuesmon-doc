@@ -1,0 +1,9 @@
+To login a user send a POST request containing the following data:
+
+- *type* with value "normal"
+- *username* (required): this field also supports the user email
+- *password* (required)
+
+include::../generated/normal-login-cmd.adoc[]
+
+When the login is successful, the HTTP response is a 200 OK and the response body is a JSON link:#object-auth-user-detail[user auth detail object]

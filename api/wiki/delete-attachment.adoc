@@ -1,0 +1,5 @@
+To delete wiki page attachments send a DELETE specifying the wiki page attachment id in the url
+
+include::../generated/wiki-attachments-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

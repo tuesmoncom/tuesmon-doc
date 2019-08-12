@@ -1,0 +1,5 @@
+To delete a webhook send a DELETE specifying the webhook id in the url
+
+include::../generated/webhooks-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

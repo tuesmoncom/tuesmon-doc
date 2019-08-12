@@ -1,0 +1,10 @@
+To resolve the id of a milestone send a GET request with the following parameters:
+
+- *project* (required): the project slug trying to be resolved
+- *milestone* (required): the milestone slug trying to be resolved
+
+include::../generated/resolver-milestone-cmd.adoc[]
+
+The response body is a JSON object containing the project and the milestone ids
+
+include::../generated/resolver-milestone-output.adoc[]

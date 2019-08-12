@@ -1,0 +1,8 @@
+To search send a GET request with the following get parameters:
+
+- *project* (required): project id
+- *text*: string
+
+include::../generated/search-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON list of link:#object-search-results-detail[search results detail objects]

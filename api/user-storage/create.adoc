@@ -1,0 +1,8 @@
+To create user storage data send a POST request with the following data:
+
+- *key*: string
+- *value*: string
+
+include::../generated/user-storage-create-cmd.adoc[]
+
+When the creation is successful, the HTTP response is a 201 Created and the response body is a JSON link:#object-user-storage-detail[user storage data object]

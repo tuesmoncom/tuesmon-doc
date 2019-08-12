@@ -1,0 +1,7 @@
+[source,json]
+----
+{
+    "_error_message": "You do not have permission to perform this action.",
+    "_error_type": "tuesmon.base.exceptions.PermissionDenied"
+}
+----

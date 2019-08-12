@@ -1,0 +1,45 @@
+To list issues send a GET request with the following parameters:
+
+include::../generated/issues-list-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON list of link:#object-issue-detail-list[issue detail list objects]
+
+The results can be filtered using the following parameters:
+
+- *project*: project id
+- *status*: status id
+- *severity*: severity id
+- *priority*: priority id
+- *owner*: owner user id
+- *assigned_to*: assigned to user id
+- *tags*: separated by ","
+- *type*: issue type id
+- *role*: role id
+- *watchers*: watching user id
+- *status__is_closed*: (true|false)
+- *exclude_status*: status id
+- *exclude_severity*: severity id
+- *exclude_priority*: priority id
+- *exclude_owner*: user owner id
+- *exclude_assigned_to*: assigned to user id
+- *exlcude_tags*: separated by ","
+- *exclude_type*: issue type id
+- *exclude role*: role id
+
+the "exclude_" params work excluding from the response the results with which they match.
+
+include::../generated/issues-filtered-list-cmd.adoc[]
+
+The results can be ordered using the order_by parameter with the values:
+
+- *type*
+- *severity*
+- *status*
+- *priority*
+- *created_date*
+- *modified_date*
+- *owner*
+- *assigned_to*
+- *subject*
+
+include::../generated/issues-filtered-and-ordered-list-cmd.adoc[]

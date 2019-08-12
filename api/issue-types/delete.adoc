@@ -1,0 +1,5 @@
+To delete issue statuses send a DELETE specifying the issue type id in the url
+
+include::../generated/issue-types-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

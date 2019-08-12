@@ -1,0 +1,5 @@
+To delete a history comment send a POST specifying the history entry id in the url
+
+include::../generated/user-story-delete-comment-cmd.adoc[]
+
+When deleted succesfully, the HTTP response is a 204 NO CONTENT with an empty body response

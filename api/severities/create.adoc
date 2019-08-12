@@ -1,0 +1,13 @@
+To create severities send a POST request with the following data:
+
+- *color*: in hexadecimal
+- *name* (required)
+- *order*: integer
+- *project*: (required): project id
+
+
+include::../generated/severities-create-cmd.adoc[]
+
+include::../generated/severities-simple-create-cmd.adoc[]
+
+When the creation is successful, the HTTP response is a 201 Created and the response body is a JSON link:#object-severity-detail[severity detail object]

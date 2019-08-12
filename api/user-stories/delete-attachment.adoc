@@ -1,0 +1,5 @@
+To delete user story attachments send a DELETE specifying the user story attachment id in the url
+
+include::../generated/user-stories-attachment-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

@@ -1,0 +1,15 @@
+To resolve an object if we don't know its type we have to use `ref` GET parameter:
+
+include::../generated/resolver-ref-cmd.adoc[]
+
+The response body is a JSON object containing the project and the story, task or
+issue id.
+
+include::../generated/resolver-ref-output.adoc[]
+
+[IMPORTANT]
+.Incompatibility between GET params
+=====================================================================
+Be careful because `ref` is inconpatible with `us`, `task` and `issue`
+parameters in requests with multiple resolutions.
+=====================================================================

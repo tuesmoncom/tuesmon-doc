@@ -1,0 +1,11 @@
+To list user story custom attributes send a GET request with the following parameters:
+
+include::../generated/user-stories-custom-attributes-list-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON list of link:#object-userstory-custom-attribute-detail[user story custom attribute detail objects]
+
+The results can be filtered using the following parameters:
+
+- *project*: project id
+
+include::../generated/user-stories-custom-attributes-filtered-list-cmd.adoc[]

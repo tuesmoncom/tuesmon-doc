@@ -1,0 +1,5 @@
+To like a project send a POST request specifying the project id in the url
+
+include::../generated/projects-like-cmd.adoc[]
+
+The HTTP response is a 200 OK with an empty body response

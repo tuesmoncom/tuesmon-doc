@@ -1,0 +1,127 @@
+[[projects-list]]
+=== List
+include::../projects/list.adoc[]
+
+[[projects-create]]
+=== Create
+include::../projects/create.adoc[]
+
+[[projects-get]]
+=== Get
+include::../projects/get.adoc[]
+
+[[projects-get-by-slug]]
+=== Get by slug
+include::../projects/get-by-slug.adoc[]
+
+[[projects-edit]]
+=== Edit
+include::../projects/edit.adoc[]
+
+[[projects-delete]]
+=== Delete
+include::../projects/delete.adoc[]
+
+[[projects-bulk-update-order]]
+=== Bulk update order
+include::../projects/bulk-update-order.adoc[]
+
+[[projects-get-modules]]
+=== Get modules configuration
+include::../projects/get-modules.adoc[]
+
+[[projects-edit-modules]]
+=== Edit modules configuration
+include::../projects/edit-modules.adoc[]
+
+[[projects-stats]]
+=== Stats
+include::../projects/stats.adoc[]
+
+[[projects-issue-stats]]
+=== Issue stats
+include::../projects/issues-stats.adoc[]
+
+[[projects-tag-colors]]
+=== Tag colors
+include::../projects/tags-colors.adoc[]
+
+[[projects-create-tag]]
+=== Create tag
+include::../projects/create-tag.adoc[]
+
+[[projects-edit-tag]]
+=== Edit tag
+include::../projects/edit-tag.adoc[]
+
+[[projects-delete-tag]]
+=== Delete-tag
+include::../projects/delete-tag.adoc[]
+
+[[projects-mix-tags]]
+=== Mix tags
+include::../projects/mix-tags.adoc[]
+
+[[projects-like]]
+=== Like a project
+include::../projects/like.adoc[]
+
+[[projects-unlike]]
+=== Unlike a project
+include::../projects/unlike.adoc[]
+
+[[projects-fans]]
+=== List project fans
+include::../projects/fans.adoc[]
+
+[[projects-watch]]
+=== Watch a project
+include::../projects/watch.adoc[]
+
+[[projects-unwatch]]
+=== Stop watching project
+include::../projects/unwatch.adoc[]
+
+[[projects-watchers]]
+=== List project watchers
+include::../projects/watchers.adoc[]
+
+[[projects-create-template]]
+=== Create template
+include::../projects/create-template.adoc[]
+
+[[projects-leave]]
+=== Leave
+include::../projects/leave.adoc[]
+
+[[projects-change-logo]]
+=== Change logo
+include::../projects/change-logo.adoc[]
+
+[[projects-remove-logo]]
+=== Remove logo
+include::../projects/remove-logo.adoc[]
+
+[[projects-transfer-validate-token]]
+=== Transfer validate-token
+include::../projects/transfer-validate-token.adoc[]
+
+[[projects-transfer-request]]
+=== Transfer request
+include::../projects/transfer-request.adoc[]
+
+[[projects-transfer-start]]
+=== Transfer start
+include::../projects/transfer-start.adoc[]
+
+[[projects-transfer-accept]]
+=== Transfer accept
+include::../projects/transfer-accept.adoc[]
+
+[[projects-transfer-reject]]
+=== Transfer reject
+include::../projects/transfer-reject.adoc[]
+
+[[projects-duplicate]]
+=== Duplicate
+include::../projects/duplicate.adoc[]

@@ -1,0 +1,5 @@
+To remove a vote from a user story send a POST request specifying the user story id in the url
+
+include::../generated/user-stories-downvote-cmd.adoc[]
+
+When remove of the vote succeeded, the HTTP response is a 200 OK with an empty body response

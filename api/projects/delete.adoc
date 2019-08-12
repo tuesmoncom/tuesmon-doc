@@ -1,0 +1,5 @@
+To delete projects send a DELETE specifying the project id in the url
+
+include::../generated/projects-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

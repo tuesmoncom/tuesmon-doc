@@ -1,0 +1,8 @@
+To request an authorization code send a POST request with the following data:
+
+- *application*: the application id for the requested token
+- *state*: an unguessable random string. It is used to protect against cross-site request forgery attacks. The API will include this value when the validation process is completed so the final app can verify it matches the original one.
+
+include::../generated/application-tokens-authorize-cmd.adoc[]
+
+When the creation is successful, the HTTP response is a 200 and the response body is a JSON link:#object-application-token-authorization-code[authorization code object]

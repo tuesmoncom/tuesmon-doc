@@ -1,0 +1,6 @@
+[source,json]
+----
+{
+    "_error_message": "No WebhookLog matches the given query."
+}
+----

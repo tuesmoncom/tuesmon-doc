@@ -1,0 +1,61 @@
+[source,json]
+----
+[
+    {
+        "id": 6,
+        "live_notify_level": 1,
+        "notify_level": 2,
+        "project": 1,
+        "project_name": "Project Example 0",
+        "web_notify_level": true
+    },
+    {
+        "id": 19,
+        "live_notify_level": 1,
+        "notify_level": 1,
+        "project": 2,
+        "project_name": "Project Example 1",
+        "web_notify_level": true
+    },
+    {
+        "id": 38,
+        "live_notify_level": 1,
+        "notify_level": 1,
+        "project": 3,
+        "project_name": "Project Example 2",
+        "web_notify_level": true
+    },
+    {
+        "id": 48,
+        "live_notify_level": 1,
+        "notify_level": 1,
+        "project": 4,
+        "project_name": "Project Example 3",
+        "web_notify_level": true
+    },
+    {
+        "id": 62,
+        "live_notify_level": 1,
+        "notify_level": 1,
+        "project": 5,
+        "project_name": "Project Example 4",
+        "web_notify_level": true
+    },
+    {
+        "id": 74,
+        "live_notify_level": 1,
+        "notify_level": 1,
+        "project": 6,
+        "project_name": "Project Example 5",
+        "web_notify_level": true
+    },
+    {
+        "id": 87,
+        "live_notify_level": 1,
+        "notify_level": 1,
+        "project": 7,
+        "project_name": "Project Example 6",
+        "web_notify_level": true
+    }
+]
+----

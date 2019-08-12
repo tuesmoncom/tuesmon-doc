@@ -1,0 +1,5 @@
+To get the list of voters from a task send a GET request specifying the task id in the url
+
+include::../generated/tasks-voters-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON list of link:#object-task-voter-detail[task voter object]

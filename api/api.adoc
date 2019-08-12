@@ -1,0 +1,753 @@
+= Tuesmon REST API
+:toc: left
+:numbered:
+:source-highlighter: pygments
+:pygments-style: friendly
+
+== General notes
+include::general-notes.adoc[]
+
+
+== Endpoints Summary
+
+=== Auth
+include::login/endpoints.adoc[]
+
+=== Applications
+include::applications/endpoints.adoc[]
+
+=== Application Tokens
+include::application-tokens/endpoints.adoc[]
+
+=== Resolver
+include::resolver/endpoints.adoc[]
+
+=== Searches
+include::searches/endpoints.adoc[]
+
+=== User storage
+include::user-storage/endpoints.adoc[]
+
+=== Project templates
+include::project-templates/endpoints.adoc[]
+
+=== Projects
+include::projects/endpoints.adoc[]
+
+=== Memberships/Invitations
+include::memberships/endpoints.adoc[]
+
+=== Milestones
+include::milestones/endpoints.adoc[]
+
+=== Epics
+include::epics/endpoints.adoc[]
+
+=== Epic status
+include::epic-statuses/endpoints.adoc[]
+
+=== Epic custom attribute
+include::epic-custom-attributes/endpoints.adoc[]
+
+=== Epic custom attributes values
+include::epic-custom-attributes-values/endpoints.adoc[]
+
+=== User stories
+include::user-stories/endpoints.adoc[]
+
+=== User story status
+include::user-story-statuses/endpoints.adoc[]
+
+=== Points
+include::points/endpoints.adoc[]
+
+=== User story custom attribute
+include::user-story-custom-attributes/endpoints.adoc[]
+
+=== User story custom attributes values
+include::user-story-custom-attributes-values/endpoints.adoc[]
+
+=== Tasks
+include::tasks/endpoints.adoc[]
+
+=== Task status
+include::task-statuses/endpoints.adoc[]
+
+=== Task custom attribute
+include::task-custom-attributes/endpoints.adoc[]
+
+=== Task custom attributes values
+include::task-custom-attributes-values/endpoints.adoc[]
+
+=== Issues
+include::issues/endpoints.adoc[]
+
+=== Issue status
+include::issue-statuses/endpoints.adoc[]
+
+=== Issue types
+include::issue-types/endpoints.adoc[]
+
+=== Priorities
+include::priorities/endpoints.adoc[]
+
+=== Severities
+include::severities/endpoints.adoc[]
+
+=== Issue custom attribute
+include::issue-custom-attributes/endpoints.adoc[]
+
+=== Issue custom attributes values
+include::issue-custom-attributes-values/endpoints.adoc[]
+
+=== Wiki pages
+include::wiki/endpoints.adoc[]
+
+=== Wiki links
+include::wikilinks/endpoints.adoc[]
+
+=== History
+include::history/endpoints.adoc[]
+
+=== Users
+include::users/endpoints.adoc[]
+
+=== Notify policies
+include::notify-policies/endpoints.adoc[]
+
+=== Contact
+include::contact/endpoints.adoc[]
+
+=== Feedback
+include::feedback/endpoints.adoc[]
+
+=== Export/Import
+include::export-import/endpoints.adoc[]
+
+=== Webhooks
+include::webhooks/endpoints.adoc[]
+
+=== Timelines
+include::timelines/endpoints.adoc[]
+
+=== Locales
+include::locales/endpoints.adoc[]
+
+=== Stats
+include::stats/endpoints.adoc[]
+
+=== Importers
+include::importers/endpoints.adoc[]
+
+[[auth]]
+== Auth
+include::login/summary.adoc[]
+
+[[applications]]
+== Applications
+include::applications/summary.adoc[]
+
+[[application-tokens]]
+== Application tokens
+include::application-tokens/summary.adoc[]
+
+[[resolver]]
+== Resolver
+include::resolver/summary.adoc[]
+
+[[searches]]
+== Searches
+include::searches/summary.adoc[]
+
+[[user-storage]]
+== User storage
+include::user-storage/summary.adoc[]
+
+[[project-templates]]
+== Project templates
+include::project-templates/summary.adoc[]
+
+[[projects]]
+== Projects
+include::projects/summary.adoc[]
+
+[[memberships]]
+== Memberships/Invitations
+include::memberships/summary.adoc[]
+
+[[milestones]]
+== Milestones
+include::milestones/summary.adoc[]
+
+[[epics]]
+== Epics
+include::epics/summary.adoc[]
+
+[[epic-statuses]]
+== Epic status
+include::epic-statuses/summary.adoc[]
+
+[[epic-custom-attributes]]
+== Epic custom attribute
+include::epic-custom-attributes/summary.adoc[]
+
+[[epic-custom-attributes-values]]
+== Epic custom attributes values
+include::epic-custom-attributes-values/summary.adoc[]
+
+[[user-stories]]
+== User stories
+include::user-stories/summary.adoc[]
+
+[[user-story-statuses]]
+== User story status
+include::user-story-statuses/summary.adoc[]
+
+[[points]]
+== Points
+include::points/summary.adoc[]
+
+[[user-story-custom-attributes]]
+== User story custom attribute
+include::user-story-custom-attributes/summary.adoc[]
+
+[[user-story-custom-attributes-values]]
+== User story custom attributes values
+include::user-story-custom-attributes-values/summary.adoc[]
+
+[[tasks]]
+== Tasks
+include::tasks/summary.adoc[]
+
+[[task-statuses]]
+== Task status
+include::task-statuses/summary.adoc[]
+
+[[task-custom-attributes]]
+== Task custom attribute
+include::task-custom-attributes/summary.adoc[]
+
+[[task-custom-attributes-values]]
+== Task custom attributes values
+include::task-custom-attributes-values/summary.adoc[]
+
+[[issues]]
+== Issues
+include::issues/summary.adoc[]
+
+[[issue-statuses]]
+== Issue status
+include::issue-statuses/summary.adoc[]
+
+[[issue-types]]
+== Issue types
+include::issue-types/summary.adoc[]
+
+[[priorities]]
+== Priorities
+include::priorities/summary.adoc[]
+
+[[severities]]
+== Severities
+include::severities/summary.adoc[]
+
+[[issue-custom-attributes]]
+== Issue custom attribute
+include::issue-custom-attributes/summary.adoc[]
+
+[[issue-custom-attributes-values]]
+== Issue custom attributes values
+include::issue-custom-attributes-values/summary.adoc[]
+
+[[wiki]]
+== Wiki pages
+include::wiki/summary.adoc[]
+
+[[wikilinks]]
+== Wiki links
+include::wikilinks/summary.adoc[]
+
+[[history]]
+== History
+include::history/summary.adoc[]
+
+[[users]]
+== Users
+include::users/summary.adoc[]
+
+[[notify-policies]]
+== Notify policies
+include::notify-policies/summary.adoc[]
+
+[[feedback]]
+== Feedback
+include::feedback/summary.adoc[]
+
+[[export-import]]
+== Export/Import
+include::export-import/summary.adoc[]
+
+[[webhooks]]
+== Webhooks
+include::webhooks/summary.adoc[]
+
+[[timelines]]
+== Timelines
+include::timelines/summary.adoc[]
+
+[[locales]]
+== Locales
+include::locales/summary.adoc[]
+
+[[stats]]
+== Stats
+include::stats/summary.adoc[]
+
+[[importers]]
+== Importers
+include::importers/summary.adoc[]
+
+
+[[contact]]
+== Contact
+include::contact/summary.adoc[]
+
+== Objects Summary
+
+[[object-attachment-detail]]
+===  Attachment
+include::generated/user-stories-attachments-get-output.adoc[]
+
+[[object-application-detail]]
+include::generated/applications-get-output.adoc[]
+
+[[object-application-token-detail]]
+=== Application token object
+include::generated/application-tokens-get-output.adoc[]
+
+[[object-application-token-authorization-code]]
+=== Authorization code object
+include::generated/application-tokens-authorize-output.adoc[]
+
+[[object-application-token-cyphered-token]]
+=== Cyphered token object
+include::generated/application-tokens-validate-output.adoc[]
+
+[[object-user-detail]]
+===  User detail
+include::generated/users-get-output.adoc[]
+
+[[object-contact-detail]]
+===  User contact detail
+include::generated/users-contacts-output.adoc[]
+
+[[object-auth-user-detail]]
+===  User authentication-detail
+include::generated/normal-login-output.adoc[]
+
+[[object-user-stats-detail]]
+===  User stats detail
+include::generated/users-stats-output.adoc[]
+
+[[object-search-results-detail]]
+===  Search results detail
+include::generated/search-output.adoc[]
+
+[[object-user-storage-detail]]
+=== User storage data
+include::generated/user-storage-get-output.adoc[]
+
+[[object-project-template-detail]]
+== Project templates detail
+include::generated/project-templates-get-output.adoc[]
+
+[[object-project-list-entry]]
+===  Project list entry
+include::generated/projects-list-output.adoc[]
+
+[[object-project-detail]]
+===  Project detail
+include::generated/projects-get-output.adoc[]
+
+[[object-project-modules-detail]]
+===  Project modules configuration
+include::generated/projects-modules-get-output.adoc[]
+
+[[object-project-stats-detail]]
+===  Project stats detail
+include::generated/projects-stats-output.adoc[]
+
+[[object-project-issue-stats-detail]]
+===  Project issue stats detail
+include::generated/projects-issues-stats-output.adoc[]
+
+[[object-project-tags-colors-detail]]
+===  Project tag colors data detail
+include::generated/projects-tags-colors-output.adoc[]
+
+[[object-project-voter-detail]]
+===  Project voter detail
+include::generated/projects-fans-output.adoc[]
+
+[[object-project-watcher-detail]]
+===  Project watcher detail
+include::generated/projects-watchers-output.adoc[]
+
+[[object-membership-detail]]
+===  Membership detail
+include::generated/memberships-get-output.adoc[]
+
+[[object-milestone-detail]]
+===  Milestone detail
+include::generated/milestones-get-output.adoc[]
+
+[[object-milestone-watcher-detail]]
+===  Milestone watcher detail
+include::generated/milestones-watchers-output.adoc[]
+
+[[object-milestone-stats-detail]]
+===  Milestone stats detail
+include::generated/milestones-stats-output.adoc[]
+
+[[object-epic-detail]]
+=== Epic detail
+include::generated/epics-get-output.adoc[]
+
+[[object-epic-detail-get]]
+=== Epic detail (GET)
+include::generated/epics-get-output.adoc[]
+
+[[object-epic-detail-list]]
+=== Epic detail (LIST)
+include::generated/epics-list-output.adoc[]
+
+[[object-epic-filters-data]]
+=== Epic filters data detail
+include::generated/epics-filters-data-get-output.adoc[]
+
+[[object-epic-voter-detail]]
+===  Epic voter detail
+include::generated/epics-voters-output.adoc[]
+
+[[object-epic-watcher-detail]]
+===  Epic watcher detail
+include::generated/epics-watchers-output.adoc[]
+
+[[object-epic-status-detail]]
+=== Epic status detail
+include::generated/epic-statuses-get-output.adoc[]
+
+[[object-epic-custom-attribute-detail]]
+=== Epic custom attribute detail
+include::generated/epics-custom-attributes-get-output.adoc[]
+
+[[object-epic-custom-attributes-values-detail]]
+=== Epic custom attributes values detail
+include::generated/epics-custom-attributes-values-get-output.adoc[]
+
+[[object-epic-related-user-story-detail]]
+=== Epic related user story detail
+include::generated/epics-related-user-story-get-output.adoc[]
+
+[[object-userstory-detail]]
+=== User story detail
+include::generated/user-stories-get-output.adoc[]
+
+[[object-userstory-detail-get]]
+=== User story detail (GET)
+include::generated/user-stories-get-output.adoc[]
+
+[NOTE]
+neighbors is a read only field
+
+[[object-userstory-detail-list]]
+=== User story detail (LIST)
+include::generated/user-stories-list-output.adoc[]
+
+[[object-userstory-filters-data]]
+=== Issue filters data detail
+include::generated/user-stories-filter-data-output.adoc[]
+
+[[object-userstory-voter-detail]]
+===  User story voter detail
+inlcude::generated/user-stories-get-voters-output.adoc[]
+
+[[object-userstory-watcher-detail]]
+===  User story watcher detail
+inlcude::generated/user-stories-get-watchers-output.adoc[]
+
+[[object-userstory-status-detail]]
+=== User story status detail
+include::generated/user-story-statuses-get-output.adoc[]
+
+[[object-point-detail]]
+=== Point detail
+include::generated/points-get-output.adoc[]
+
+[[object-userstory-custom-attribute-detail]]
+=== User story custom attribute detail
+include::generated/user-stories-custom-attributes-get-output.adoc[]
+
+[[object-userstory-custom-attributes-values-detail]]
+=== User story custom attributes values detail
+include::generated/user-stories-custom-attributes-values-get-output.adoc[]
+
+[[object-task-detail]]
+=== Task detail
+include::generated/tasks-get-output.adoc[]
+
+[[object-task-detail-get]]
+=== Task detail (GET)
+include::generated/tasks-get-output.adoc[]
+
+[[object-task-detail-list]]
+=== Task detail (LIST)
+include::generated/tasks-list-output.adoc[]
+
+[[object-task-filters-data]]
+=== Task filters data detail
+include::generated/tasks-filters-data-output.adoc[]
+
+[[object-task-voter-detail]]
+===  Task voter detail
+include::generated/tasks-voters-output.adoc[]
+
+[[object-task-watcher-detail]]
+===  Task watcher detail
+include::generated/tasks-watchers-output.adoc[]
+
+[[object-task-status-detail]]
+=== Task status detail
+include::generated/task-statuses-get-output.adoc[]
+
+[[object-task-custom-attribute-detail]]
+=== Task custom attribute detail
+include::generated/tasks-custom-attributes-get-output.adoc[]
+
+[[object-task-custom-attributes-values-detail]]
+=== Task custom attributes values detail
+include::generated/tasks-custom-attributes-values-get-output.adoc[]
+
+[[object-issue-detail]]
+=== Issue detail
+include::generated/issues-get-output.adoc[]
+
+[[object-issue-detail-get]]
+=== Issue detail (GET)
+include::generated/issues-get-output.adoc[]
+
+[[object-issue-detail-list]]
+=== Issue detail (LIST)
+include::generated/issues-list-output.adoc[]
+
+[[object-issue-filters-data]]
+=== Issue filters data detail
+include::generated/issues-filters-data-get-output.adoc[]
+
+[[object-issue-voters-detail]]
+=== Issue voters detail
+include::generated/issues-voters-output.adoc[]
+
+[[object-issue-watcher-detail]]
+===  Issue watchers detail
+include::generated/issues-watchers-output.adoc[]
+
+[[object-issue-status-detail]]
+=== Issue status detail
+include::generated/issue-statuses-get-output.adoc[]
+
+[[object-issue-type-detail]]
+=== Issue type detail
+include::generated/issue-types-get-output.adoc[]
+
+[[object-priority-detail]]
+=== Priority detail
+include::generated/priorities-get-output.adoc[]
+
+[[object-severity-detail]]
+=== Severity detail
+include::generated/severities-get-output.adoc[]
+
+[[object-issue-custom-attribute-detail]]
+=== Issue custom attribute detail
+include::generated/issues-custom-attributes-get-output.adoc[]
+
+[[object-issue-custom-attributes-values-detail]]
+=== Issue custom attributes values detail
+include::generated/issues-custom-attributes-values-get-output.adoc[]
+
+[[object-wiki-detail]]
+=== Wiki page
+include::generated/wiki-get-output.adoc[]
+
+[[object-wiki-watcher-detail]]
+===  Wiki page watcher detail
+include::generated/wiki-watchers-output.adoc[]
+
+[[object-wiki-link-detail]]
+=== Wiki link
+include::generated/wiki-links-get-output.adoc[]
+
+[[object-history-entry-comment-detail]]
+=== History entry comment
+include::generated/user-stories-get-comment-versions-output.adoc[]
+
+[[object-history-entry-detail]]
+=== History entry
+include::generated/user-stories-get-history-output.adoc[]
+
+[[object-notify-policy-detail]]
+=== Notify policy
+include::generated/notify-policies-get-output.adoc[]
+
+[[object-feedback-detail]]
+=== Feedback
+include::generated/feedback-output.adoc[]
+
+[[object-export-synch]]
+=== Export detail for synch mode
+include::generated/projects-export-output.adoc[]
+
+[[object-export-accepted]]
+=== Export accepted response
+include::export-import/detail-export-accepted.adoc[]
+
+[[object-import-accepted]]
+=== Import accepted response
+include::export-import/detail-import-accepted.adoc[]
+
+[[object-webhook-detail]]
+=== Webhook
+include::generated/webhooks-get-output.adoc[]
+
+[[object-webhook-log-detail]]
+=== Webhook log
+include::generated/webhooklogs-get-output.adoc[]
+
+[[object-timeline-detail]]
+=== Timeline entry detail
+include::generated/projects-timeline-get-output.adoc[]
+
+[[object-locale-detail]]
+=== Locale
+include::generated/locales-output.adoc[]
+
+[[object-watched-detail]]
+=== Watched
+include::generated/users-watched-output.adoc[]
+
+[[object-liked-detail]]
+=== Liked
+include::generated/users-liked-output.adoc[]
+
+[[object-voted-detail]]
+=== Voted
+include::generated/users-voted-output.adoc[]
+
+[[object-contact]]
+=== Contact
+include::generated/contact-create-output.adoc[]
+
+[[object-discover-stats]]
+=== Discover stats
+include::generated/stats-discover-output.adoc[]
+
+[[object-system-stats]]
+=== System stats
+include::generated/stats-system-output.adoc[]
+
+[[object-importers-trello-auth-url]]
+=== Importer Trello Auth Url
+include::generated/importers-trello-auth-url-output.adoc[]
+
+[[object-importers-trello-auth-token]]
+=== Importer Trello Auth Token
+include::generated/importers-trello-authorize-output.adoc[]
+
+[[object-importers-trello-list-users]]
+=== Importer Trello list users
+include::generated/importers-trello-list-users-output.adoc[]
+
+[[object-importers-trello-list-projects]]
+=== Importer Trello list projects
+include::generated/importers-trello-list-projects-output.adoc[]
+
+[[object-importers-trello-import-project]]
+=== Importer Trello import project
+include::generated/importers-trello-import-project-output.adoc[]
+
+[[object-importers-github-auth-url]]
+=== Importer Github Auth Url
+include::generated/importers-github-auth-url-output.adoc[]
+
+[[object-importers-github-auth-token]]
+=== Importer Github Auth Token
+include::generated/importers-github-authorize-output.adoc[]
+
+[[object-importers-github-list-users]]
+=== Importer Github list users
+include::generated/importers-github-list-users-output.adoc[]
+
+[[object-importers-github-list-projects]]
+=== Importer Github list projects
+include::generated/importers-github-list-projects-output.adoc[]
+
+[[object-importers-github-import-project]]
+=== Importer Github import project
+include::generated/importers-github-import-project-output.adoc[]
+
+[[object-importers-jira-auth-url]]
+=== Importer Jira Auth Url
+include::generated/importers-jira-auth-url-output.adoc[]
+
+[[object-importers-jira-auth-token]]
+=== Importer Jira Auth Token
+include::generated/importers-jira-authorize-output.adoc[]
+
+[[object-importers-jira-list-users]]
+=== Importer Jira list users
+include::generated/importers-jira-list-users-output.adoc[]
+
+[[object-importers-jira-list-projects]]
+=== Importer Jira list projects
+include::generated/importers-jira-list-projects-output.adoc[]
+
+[[object-importers-jira-import-project]]
+=== Importer Jira import project
+include::generated/importers-jira-import-project-output.adoc[]
+
+[[object-importers-asana-auth-url]]
+=== Importer Asana Auth Url
+include::generated/importers-asana-auth-url-output.adoc[]
+
+[[object-importers-asana-auth-token]]
+=== Importer Asana Auth Token
+include::generated/importers-asana-authorize-output.adoc[]
+
+[[object-importers-asana-list-users]]
+=== Importer Asana list users
+include::generated/importers-asana-list-users-output.adoc[]
+
+[[object-importers-asana-list-projects]]
+=== Importer Asana list projects
+include::generated/importers-asana-list-projects-output.adoc[]
+
+[[object-importers-asana-import-project]]
+=== Importer Asana import project
+include::generated/importers-asana-import-project-output.adoc[]
+
+[[object-importers-task-accepted]]
+=== Importer Import project task accepted
+include::importers/importers-task-accepted.adoc[]
+
+== Contrib plugins
+
+Tuesmon allows adding features through contrib plugins, each plugin can add new
+API endpoints, and has its own documentation.
+
+Current supported contrib plugins that adding endpoints:
+
+* tuesmon-contrib-slack: Slack integration
+  (link:http://tuesmoncom.github.io/tuesmon-contrib-slack/dist/index.html[documentation])
+* tuesmon-contrib-hall: Hall.com integration
+  (link:http://tuesmoncom.github.io/tuesmon-contrib-hall/dist/index.html[documentation])

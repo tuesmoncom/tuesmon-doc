@@ -1,0 +1,5 @@
+To get a priority send a GET request specifying the priority id in the url
+
+include::../generated/priorities-get-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-priority-detail[priority detail object]

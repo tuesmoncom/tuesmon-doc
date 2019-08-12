@@ -1,0 +1,7 @@
+To edit a history comment send a POST specifying the history entry id in the url with the following data:
+
+- *assigned_to*: the new comment
+
+include::../generated/user-stories-edit-comment-cmd.adoc[]
+
+When deleted succesfully, the HTTP response is a 204 NO CONTENT with an empty body response

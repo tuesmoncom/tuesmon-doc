@@ -1,0 +1,5 @@
+To delete user story satuses send a DELETE specifying the user story status id in the url
+
+include::../generated/user-story-statuses-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

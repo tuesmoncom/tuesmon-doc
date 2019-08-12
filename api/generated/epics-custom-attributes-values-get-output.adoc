@@ -1,0 +1,10 @@
+[source,json]
+----
+{
+    "attributes_values": {
+        "12": "240 min"
+    },
+    "epic": 14,
+    "version": 3
+}
+----

@@ -1,0 +1,11 @@
+To list users send a GET request with the following parameters:
+
+include::../generated/users-list-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON list of link:#object-user-detail[user detail objects]
+
+The results can be filtered using the following parameters:
+
+- *project*: project id
+
+include::../generated/users-filtered-list-cmd.adoc[]

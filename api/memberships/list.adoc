@@ -1,0 +1,12 @@
+To list memberships send a GET request with the following parameters:
+
+include::../generated/memberships-list-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON list of link:#object-membership-detail[membership detail objects]
+
+The results can be filtered using the following parameters:
+
+- *project*: project id
+- *role*: role id
+
+include::../generated/memberships-filtered-list-cmd.adoc[]

@@ -1,0 +1,5 @@
+To stop watching a wiki page send a POST request specifying the wiki page id in the url
+
+include::../generated/wiki-unwatch-cmd.adoc[]
+
+The HTTP response is a 200 OK with an empty body response

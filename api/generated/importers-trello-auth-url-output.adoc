@@ -1,0 +1,6 @@
+[source,json]
+----
+{
+    "url": "https://trello.com/1/OAuthAuthorizeToken?oauth_token=b000000000000000000a0&scope=read,write,account&expiration=1day&name=Tuesmon&return_url=http://localhost:9001/project/new/import/trello"
+}
+----

@@ -1,0 +1,10 @@
+To create webhook send a POST request with the following data:
+
+- *project* (required): project id
+- *name* (required): string
+- *url* (required): payload url
+- *key* (required): secret key
+
+include::../generated/webhooks-create-cmd.adoc[]
+
+When the creation is successful, the HTTP response is a 201 Created and the response body is a JSON link:#object-webhook-detail[webhook detail object]

@@ -1,0 +1,1341 @@
+[source,json]
+----
+{
+    "anon_permissions": [],
+    "blocked_code": null,
+    "created_date": "2019-04-10T10:34:11.731Z",
+    "creation_template": null,
+    "default_epic_status": null,
+    "default_issue_status": null,
+    "default_issue_type": null,
+    "default_points": null,
+    "default_priority": null,
+    "default_severity": null,
+    "default_task_status": null,
+    "default_us_status": null,
+    "description": "Beta description",
+    "epic_custom_attributes": [
+        {
+            "created_date": "2019-04-10T10:34:12.586298+00:00",
+            "description": "ratione doloribus explicabo",
+            "extra": null,
+            "id": 4,
+            "modified_date": "2019-04-10T10:34:12.586325+00:00",
+            "name": "enim similique",
+            "order": 1,
+            "project_id": 1,
+            "type": "date"
+        },
+        {
+            "created_date": "2019-04-10T10:34:12.58289+00:00",
+            "description": "id distinctio sequi amet incidunt",
+            "extra": null,
+            "id": 2,
+            "modified_date": "2019-04-10T10:34:12.582917+00:00",
+            "name": "quod",
+            "order": 1,
+            "project_id": 1,
+            "type": "richtext"
+        },
+        {
+            "created_date": "2019-04-10T10:34:12.580362+00:00",
+            "description": "aut nostrum consequatur quasi odio et",
+            "extra": null,
+            "id": 1,
+            "modified_date": "2019-04-10T10:34:12.580392+00:00",
+            "name": "dolores",
+            "order": 1,
+            "project_id": 1,
+            "type": "richtext"
+        },
+        {
+            "created_date": "2019-04-10T10:34:12.587776+00:00",
+            "description": "nostrum asperiores eveniet libero consequuntur expedita velit accusantium",
+            "extra": null,
+            "id": 5,
+            "modified_date": "2019-04-10T10:34:12.587794+00:00",
+            "name": "corrupti totam voluptatibus",
+            "order": 1,
+            "project_id": 1,
+            "type": "number"
+        },
+        {
+            "created_date": "2019-04-10T10:34:12.58481+00:00",
+            "description": "ratione eius necessitatibus ad quibusdam",
+            "extra": null,
+            "id": 3,
+            "modified_date": "2019-04-10T10:34:12.584828+00:00",
+            "name": "odit",
+            "order": 1,
+            "project_id": 1,
+            "type": "dropdown"
+        },
+        {
+            "created_date": "2019-04-10T10:44:01.7142+00:00",
+            "description": "Duration in minutes",
+            "extra": null,
+            "id": 26,
+            "modified_date": "2019-04-10T10:44:01.71687+00:00",
+            "name": "Duration 2",
+            "order": 8,
+            "project_id": 1,
+            "type": "text"
+        },
+        {
+            "created_date": "2019-04-10T10:44:01.790567+00:00",
+            "description": "",
+            "extra": null,
+            "id": 27,
+            "modified_date": "2019-04-10T10:44:01.793251+00:00",
+            "name": "Duration 3",
+            "order": 1554893041778,
+            "project_id": 1,
+            "type": "text"
+        }
+    ],
+    "epic_statuses": [
+        {
+            "color": "#ff9900",
+            "id": 3,
+            "is_closed": false,
+            "name": "In progress",
+            "order": 3,
+            "project_id": 1,
+            "slug": "in-progress"
+        },
+        {
+            "color": "#fcc000",
+            "id": 4,
+            "is_closed": false,
+            "name": "Ready for test",
+            "order": 4,
+            "project_id": 1,
+            "slug": "ready-for-test"
+        },
+        {
+            "color": "#669900",
+            "id": 5,
+            "is_closed": true,
+            "name": "Done",
+            "order": 5,
+            "project_id": 1,
+            "slug": "done"
+        },
+        {
+            "color": "#ff8a84",
+            "id": 2,
+            "is_closed": false,
+            "name": "Ready",
+            "order": 5,
+            "project_id": 1,
+            "slug": "ready"
+        },
+        {
+            "color": "#AAAAAA",
+            "id": 36,
+            "is_closed": true,
+            "name": "New status",
+            "order": 8,
+            "project_id": 1,
+            "slug": "new-status"
+        },
+        {
+            "color": "#999999",
+            "id": 1,
+            "is_closed": false,
+            "name": "Patch status name",
+            "order": 10,
+            "project_id": 1,
+            "slug": "patch-status-name"
+        },
+        {
+            "color": "#999999",
+            "id": 37,
+            "is_closed": false,
+            "name": "New status name",
+            "order": 10,
+            "project_id": 1,
+            "slug": "new-status-name"
+        }
+    ],
+    "epics_csv_uuid": null,
+    "i_am_admin": true,
+    "i_am_member": true,
+    "i_am_owner": true,
+    "id": 1,
+    "is_backlog_activated": true,
+    "is_contact_activated": true,
+    "is_epics_activated": false,
+    "is_fan": false,
+    "is_featured": false,
+    "is_issues_activated": true,
+    "is_kanban_activated": false,
+    "is_looking_for_people": false,
+    "is_out_of_owner_limits": false,
+    "is_private": true,
+    "is_private_extra_info": {
+        "can_be_updated": true,
+        "reason": null
+    },
+    "is_watcher": false,
+    "is_wiki_activated": true,
+    "issue_custom_attributes": [
+        {
+            "created_date": "2019-04-10T10:34:12.611007+00:00",
+            "description": "voluptate rem perspiciatis ipsum",
+            "extra": null,
+            "id": 5,
+            "modified_date": "2019-04-10T10:34:12.611022+00:00",
+            "name": "adipisci exercitationem",
+            "order": 1,
+            "project_id": 1,
+            "type": "checkbox"
+        },
+        {
+            "created_date": "2019-04-10T10:34:12.609717+00:00",
+            "description": "fugiat porro officia deleniti quidem ipsam",
+            "extra": null,
+            "id": 4,
+            "modified_date": "2019-04-10T10:34:12.609734+00:00",
+            "name": "velit",
+            "order": 1,
+            "project_id": 1,
+            "type": "text"
+        },
+        {
+            "created_date": "2019-04-10T10:34:12.608351+00:00",
+            "description": "facere corrupti ipsa odit mollitia saepe officiis",
+            "extra": null,
+            "id": 3,
+            "modified_date": "2019-04-10T10:34:12.608369+00:00",
+            "name": "doloremque id",
+            "order": 1,
+            "project_id": 1,
+            "type": "dropdown"
+        },
+        {
+            "created_date": "2019-04-10T10:34:12.606989+00:00",
+            "description": "minus quibusdam neque eveniet repellendus ex dolorum optio ullam vitae",
+            "extra": null,
+            "id": 2,
+            "modified_date": "2019-04-10T10:34:12.607008+00:00",
+            "name": "doloribus ducimus nulla",
+            "order": 1,
+            "project_id": 1,
+            "type": "checkbox"
+        },
+        {
+            "created_date": "2019-04-10T10:34:12.604709+00:00",
+            "description": "officiis repudiandae dignissimos similique consequatur mollitia at enim ad molestias praesentium",
+            "extra": null,
+            "id": 1,
+            "modified_date": "2019-04-10T10:34:12.604728+00:00",
+            "name": "fugiat optio consequuntur",
+            "order": 1,
+            "project_id": 1,
+            "type": "dropdown"
+        }
+    ],
+    "issue_duedates": [
+        {
+            "by_default": true,
+            "color": "#9dce0a",
+            "days_to_due": null,
+            "id": 1,
+            "name": "Default",
+            "order": 1,
+            "project_id": 1
+        },
+        {
+            "by_default": false,
+            "color": "#ff9900",
+            "days_to_due": 14,
+            "id": 2,
+            "name": "Due soon",
+            "order": 2,
+            "project_id": 1
+        },
+        {
+            "by_default": false,
+            "color": "#ff8a84",
+            "days_to_due": 0,
+            "id": 3,
+            "name": "Past due",
+            "order": 3,
+            "project_id": 1
+        }
+    ],
+    "issue_statuses": [
+        {
+            "color": "#88A65E",
+            "id": 3,
+            "is_closed": true,
+            "name": "Ready for test",
+            "order": 3,
+            "project_id": 1,
+            "slug": "ready-for-test"
+        },
+        {
+            "color": "#BFB35A",
+            "id": 4,
+            "is_closed": true,
+            "name": "Closed",
+            "order": 4,
+            "project_id": 1,
+            "slug": "closed"
+        },
+        {
+            "color": "#5E8C6A",
+            "id": 2,
+            "is_closed": false,
+            "name": "In progress",
+            "order": 5,
+            "project_id": 1,
+            "slug": "in-progress"
+        },
+        {
+            "color": "#89BAB4",
+            "id": 5,
+            "is_closed": false,
+            "name": "Needs Info",
+            "order": 5,
+            "project_id": 1,
+            "slug": "needs-info"
+        },
+        {
+            "color": "#CC0000",
+            "id": 6,
+            "is_closed": true,
+            "name": "Rejected",
+            "order": 6,
+            "project_id": 1,
+            "slug": "rejected"
+        },
+        {
+            "color": "#666666",
+            "id": 7,
+            "is_closed": false,
+            "name": "Postponed",
+            "order": 7,
+            "project_id": 1,
+            "slug": "postponed"
+        },
+        {
+            "color": "#AAAAAA",
+            "id": 50,
+            "is_closed": true,
+            "name": "New status",
+            "order": 8,
+            "project_id": 1,
+            "slug": "new-status"
+        },
+        {
+            "color": "#999999",
+            "id": 51,
+            "is_closed": false,
+            "name": "New status name",
+            "order": 10,
+            "project_id": 1,
+            "slug": "new-status-name"
+        },
+        {
+            "color": "#8C2318",
+            "id": 1,
+            "is_closed": false,
+            "name": "Patch status name",
+            "order": 10,
+            "project_id": 1,
+            "slug": "patch-status-name"
+        }
+    ],
+    "issue_types": [
+        {
+            "color": "#89BAB4",
+            "id": 1,
+            "name": "Bug",
+            "order": 1,
+            "project_id": 1
+        },
+        {
+            "color": "#ba89a8",
+            "id": 2,
+            "name": "Question",
+            "order": 2,
+            "project_id": 1
+        },
+        {
+            "color": "#89a8ba",
+            "id": 3,
+            "name": "Enhancement",
+            "order": 3,
+            "project_id": 1
+        }
+    ],
+    "issues_csv_uuid": null,
+    "logo_big_url": "http://localhost:8000/media/project/c/3/7/3/03217576090db87e7ca5a60668552b674f50542afecf46af93e663e2916c/test.png.300x300_q85_crop.png?token=XK3J9Q%3Aqf6MgewpUSHWjFowGRsMwuqBEiOC1nxXt69rasAemztYgs3-mOetaf8H6W_NtkXPFbcMWGpmxwtMVRflqRJ7VA",
+    "logo_small_url": "http://localhost:8000/media/project/c/3/7/3/03217576090db87e7ca5a60668552b674f50542afecf46af93e663e2916c/test.png.80x80_q85_crop.png?token=XK3J9Q%3A0RaR569wvxgsojJsbR6KkKTx7inAHWEX2gM4CFvhDXLYwDtJRvwB7Vggkkz6_W0lkvymMapzFj0aJLOP_gc56A",
+    "looking_for_people_note": "",
+    "max_memberships": null,
+    "members": [
+        {
+            "color": "",
+            "full_name": "Administrator",
+            "full_name_display": "Administrator",
+            "gravatar_id": "64e1b8d34f425d19e1ee2ea7236d3028",
+            "id": 5,
+            "is_active": true,
+            "photo": null,
+            "role": 4,
+            "role_name": "Back",
+            "username": "admin"
+        },
+        {
+            "color": "#FFCC00",
+            "full_name": "Angela Perez",
+            "full_name_display": "Angela Perez",
+            "gravatar_id": "c9ba9d485f9a9153ebf53758feb0980c",
+            "id": 11,
+            "is_active": true,
+            "photo": null,
+            "role": 6,
+            "role_name": "Stakeholder",
+            "username": "user5"
+        },
+        {
+            "color": "#40826D",
+            "full_name": "Bego\u00f1a Flores",
+            "full_name_display": "Bego\u00f1a Flores",
+            "gravatar_id": "aed1e43be0f69f07ce6f34a907bc6328",
+            "id": 7,
+            "is_active": true,
+            "photo": null,
+            "role": 1,
+            "role_name": "UX",
+            "username": "user1"
+        },
+        {
+            "color": "#B6DA55",
+            "full_name": "Catalina Fernandez",
+            "full_name_display": "Catalina Fernandez",
+            "gravatar_id": "9971a763f5dfc5cbd1ce1d2865b4fcfa",
+            "id": 9,
+            "is_active": true,
+            "photo": null,
+            "role": 4,
+            "role_name": "Back",
+            "username": "user3"
+        },
+        {
+            "color": "#2099DB",
+            "full_name": "Enrique Crespo",
+            "full_name_display": "Enrique Crespo",
+            "gravatar_id": "f31e0063c7cd6da19b6467bc48d2b14b",
+            "id": 10,
+            "is_active": true,
+            "photo": null,
+            "role": 5,
+            "role_name": "Product Owner",
+            "username": "user4"
+        },
+        {
+            "color": "#71A6D2",
+            "full_name": "Francisco Gil",
+            "full_name_display": "Francisco Gil",
+            "gravatar_id": "5c921c7bd676b7b4992501005d243c42",
+            "id": 8,
+            "is_active": true,
+            "photo": null,
+            "role": 3,
+            "role_name": "Front",
+            "username": "user2"
+        },
+        {
+            "color": "#002e33",
+            "full_name": "Miguel Molina",
+            "full_name_display": "Miguel Molina",
+            "gravatar_id": "dce0e8ed702cd85d5132e523121e619b",
+            "id": 14,
+            "is_active": true,
+            "photo": null,
+            "role": 5,
+            "role_name": "Product Owner",
+            "username": "user8"
+        },
+        {
+            "color": "#B6DA55",
+            "full_name": "Mohamed Ortega",
+            "full_name_display": "Mohamed Ortega",
+            "gravatar_id": "6d7e702bd6c6fc568fca7577f9ca8c55",
+            "id": 13,
+            "is_active": true,
+            "photo": null,
+            "role": 5,
+            "role_name": "Product Owner",
+            "username": "user7"
+        },
+        {
+            "color": "#71A6D2",
+            "full_name": "Vanesa Garcia",
+            "full_name_display": "Vanesa Garcia",
+            "gravatar_id": "74cb769a5e64d445b8550789e1553502",
+            "id": 12,
+            "is_active": true,
+            "photo": null,
+            "role": 6,
+            "role_name": "Stakeholder",
+            "username": "user6"
+        },
+        {
+            "color": "#FFFF00",
+            "full_name": "Virginia Castro",
+            "full_name_display": "Virginia Castro",
+            "gravatar_id": "69b60d39a450e863609ae3546b12b360",
+            "id": 15,
+            "is_active": true,
+            "photo": null,
+            "role": 6,
+            "role_name": "Stakeholder",
+            "username": "user9"
+        }
+    ],
+    "milestones": [
+        {
+            "closed": false,
+            "id": 1,
+            "name": "Sprint 2019-2-14",
+            "slug": "sprint-2019-2-14"
+        },
+        {
+            "closed": false,
+            "id": 2,
+            "name": "Sprint 2019-3-1",
+            "slug": "sprint-2019-3-1"
+        }
+    ],
+    "modified_date": "2019-04-10T10:47:03.935Z",
+    "my_homepage": false,
+    "my_permissions": [
+        "modify_task",
+        "modify_epic",
+        "add_task",
+        "admin_roles",
+        "comment_wiki_page",
+        "view_project",
+        "modify_project",
+        "modify_wiki_page",
+        "admin_project_values",
+        "modify_us",
+        "view_epics",
+        "delete_project",
+        "modify_issue",
+        "modify_wiki_link",
+        "add_issue",
+        "delete_milestone",
+        "remove_member",
+        "delete_epic",
+        "delete_wiki_link",
+        "add_epic",
+        "comment_epic",
+        "delete_task",
+        "comment_task",
+        "comment_issue",
+        "view_issues",
+        "add_us",
+        "add_member",
+        "add_wiki_page",
+        "delete_issue",
+        "view_wiki_pages",
+        "view_milestones",
+        "add_milestone",
+        "comment_us",
+        "delete_wiki_page",
+        "view_us",
+        "modify_milestone",
+        "add_wiki_link",
+        "delete_us",
+        "view_wiki_links",
+        "view_tasks"
+    ],
+    "name": "Beta project patch",
+    "notify_level": 3,
+    "owner": {
+        "big_photo": null,
+        "full_name_display": "Administrator",
+        "gravatar_id": "64e1b8d34f425d19e1ee2ea7236d3028",
+        "id": 5,
+        "is_active": true,
+        "photo": null,
+        "username": "admin"
+    },
+    "points": [
+        {
+            "id": 1,
+            "name": "?",
+            "order": 1,
+            "project_id": 1,
+            "value": null
+        },
+        {
+            "id": 2,
+            "name": "0",
+            "order": 2,
+            "project_id": 1,
+            "value": 0
+        },
+        {
+            "id": 3,
+            "name": "1/2",
+            "order": 3,
+            "project_id": 1,
+            "value": 0.5
+        },
+        {
+            "id": 4,
+            "name": "1",
+            "order": 4,
+            "project_id": 1,
+            "value": 1
+        },
+        {
+            "id": 5,
+            "name": "2",
+            "order": 5,
+            "project_id": 1,
+            "value": 2
+        },
+        {
+            "id": 6,
+            "name": "3",
+            "order": 6,
+            "project_id": 1,
+            "value": 3
+        },
+        {
+            "id": 7,
+            "name": "5",
+            "order": 7,
+            "project_id": 1,
+            "value": 5
+        },
+        {
+            "id": 8,
+            "name": "8",
+            "order": 8,
+            "project_id": 1,
+            "value": 8
+        },
+        {
+            "id": 9,
+            "name": "10",
+            "order": 9,
+            "project_id": 1,
+            "value": 10
+        },
+        {
+            "id": 10,
+            "name": "13",
+            "order": 10,
+            "project_id": 1,
+            "value": 13
+        },
+        {
+            "id": 11,
+            "name": "20",
+            "order": 11,
+            "project_id": 1,
+            "value": 20
+        },
+        {
+            "id": 12,
+            "name": "40",
+            "order": 12,
+            "project_id": 1,
+            "value": 40
+        }
+    ],
+    "priorities": [
+        {
+            "color": "#CC0000",
+            "id": 3,
+            "name": "High",
+            "order": 5,
+            "project_id": 1
+        },
+        {
+            "color": "#669933",
+            "id": 2,
+            "name": "Normal",
+            "order": 5,
+            "project_id": 1
+        },
+        {
+            "color": "#AAAAAA",
+            "id": 22,
+            "name": "New priority",
+            "order": 8,
+            "project_id": 1
+        },
+        {
+            "color": "#999999",
+            "id": 23,
+            "name": "New priority name",
+            "order": 10,
+            "project_id": 1
+        },
+        {
+            "color": "#666666",
+            "id": 1,
+            "name": "Patch name",
+            "order": 10,
+            "project_id": 1
+        }
+    ],
+    "public_permissions": [],
+    "roles": [
+        {
+            "computable": true,
+            "id": 1,
+            "name": "UX",
+            "order": 10,
+            "permissions": [
+                "add_issue",
+                "modify_issue",
+                "delete_issue",
+                "view_issues",
+                "add_milestone",
+                "modify_milestone",
+                "delete_milestone",
+                "view_milestones",
+                "view_project",
+                "add_task",
+                "modify_task",
+                "delete_task",
+                "view_tasks",
+                "add_us",
+                "modify_us",
+                "delete_us",
+                "view_us",
+                "add_wiki_page",
+                "modify_wiki_page",
+                "delete_wiki_page",
+                "view_wiki_pages",
+                "add_wiki_link",
+                "delete_wiki_link",
+                "view_wiki_links",
+                "view_epics",
+                "add_epic",
+                "modify_epic",
+                "delete_epic",
+                "comment_epic",
+                "comment_us",
+                "comment_task",
+                "comment_issue",
+                "comment_wiki_page"
+            ],
+            "project_id": 1,
+            "slug": "ux"
+        },
+        {
+            "computable": true,
+            "id": 2,
+            "name": "Design",
+            "order": 20,
+            "permissions": [
+                "add_issue",
+                "modify_issue",
+                "delete_issue",
+                "view_issues",
+                "add_milestone",
+                "modify_milestone",
+                "delete_milestone",
+                "view_milestones",
+                "view_project",
+                "add_task",
+                "modify_task",
+                "delete_task",
+                "view_tasks",
+                "add_us",
+                "modify_us",
+                "delete_us",
+                "view_us",
+                "add_wiki_page",
+                "modify_wiki_page",
+                "delete_wiki_page",
+                "view_wiki_pages",
+                "add_wiki_link",
+                "delete_wiki_link",
+                "view_wiki_links",
+                "view_epics",
+                "add_epic",
+                "modify_epic",
+                "delete_epic",
+                "comment_epic",
+                "comment_us",
+                "comment_task",
+                "comment_issue",
+                "comment_wiki_page"
+            ],
+            "project_id": 1,
+            "slug": "design"
+        },
+        {
+            "computable": true,
+            "id": 3,
+            "name": "Front",
+            "order": 30,
+            "permissions": [
+                "add_issue",
+                "modify_issue",
+                "delete_issue",
+                "view_issues",
+                "add_milestone",
+                "modify_milestone",
+                "delete_milestone",
+                "view_milestones",
+                "view_project",
+                "add_task",
+                "modify_task",
+                "delete_task",
+                "view_tasks",
+                "add_us",
+                "modify_us",
+                "delete_us",
+                "view_us",
+                "add_wiki_page",
+                "modify_wiki_page",
+                "delete_wiki_page",
+                "view_wiki_pages",
+                "add_wiki_link",
+                "delete_wiki_link",
+                "view_wiki_links",
+                "view_epics",
+                "add_epic",
+                "modify_epic",
+                "delete_epic",
+                "comment_epic",
+                "comment_us",
+                "comment_task",
+                "comment_issue",
+                "comment_wiki_page"
+            ],
+            "project_id": 1,
+            "slug": "front"
+        },
+        {
+            "computable": true,
+            "id": 4,
+            "name": "Back",
+            "order": 40,
+            "permissions": [
+                "add_issue",
+                "modify_issue",
+                "delete_issue",
+                "view_issues",
+                "add_milestone",
+                "modify_milestone",
+                "delete_milestone",
+                "view_milestones",
+                "view_project",
+                "add_task",
+                "modify_task",
+                "delete_task",
+                "view_tasks",
+                "add_us",
+                "modify_us",
+                "delete_us",
+                "view_us",
+                "add_wiki_page",
+                "modify_wiki_page",
+                "delete_wiki_page",
+                "view_wiki_pages",
+                "add_wiki_link",
+                "delete_wiki_link",
+                "view_wiki_links",
+                "view_epics",
+                "add_epic",
+                "modify_epic",
+                "delete_epic",
+                "comment_epic",
+                "comment_us",
+                "comment_task",
+                "comment_issue",
+                "comment_wiki_page"
+            ],
+            "project_id": 1,
+            "slug": "back"
+        },
+        {
+            "computable": false,
+            "id": 5,
+            "name": "Product Owner",
+            "order": 50,
+            "permissions": [
+                "add_issue",
+                "modify_issue",
+                "delete_issue",
+                "view_issues",
+                "add_milestone",
+                "modify_milestone",
+                "delete_milestone",
+                "view_milestones",
+                "view_project",
+                "add_task",
+                "modify_task",
+                "delete_task",
+                "view_tasks",
+                "add_us",
+                "modify_us",
+                "delete_us",
+                "view_us",
+                "add_wiki_page",
+                "modify_wiki_page",
+                "delete_wiki_page",
+                "view_wiki_pages",
+                "add_wiki_link",
+                "delete_wiki_link",
+                "view_wiki_links",
+                "view_epics",
+                "add_epic",
+                "modify_epic",
+                "delete_epic",
+                "comment_epic",
+                "comment_us",
+                "comment_task",
+                "comment_issue",
+                "comment_wiki_page"
+            ],
+            "project_id": 1,
+            "slug": "product-owner"
+        },
+        {
+            "computable": false,
+            "id": 6,
+            "name": "Stakeholder",
+            "order": 60,
+            "permissions": [
+                "add_issue",
+                "modify_issue",
+                "delete_issue",
+                "view_issues",
+                "view_milestones",
+                "view_project",
+                "view_tasks",
+                "view_us",
+                "modify_wiki_page",
+                "view_wiki_pages",
+                "add_wiki_link",
+                "delete_wiki_link",
+                "view_wiki_links",
+                "view_epics",
+                "comment_epic",
+                "comment_us",
+                "comment_task",
+                "comment_issue",
+                "comment_wiki_page"
+            ],
+            "project_id": 1,
+            "slug": "stakeholder"
+        }
+    ],
+    "severities": [
+        {
+            "color": "#0000FF",
+            "id": 3,
+            "name": "Normal",
+            "order": 3,
+            "project_id": 1
+        },
+        {
+            "color": "#FFA500",
+            "id": 4,
+            "name": "Important",
+            "order": 4,
+            "project_id": 1
+        },
+        {
+            "color": "#CC0000",
+            "id": 5,
+            "name": "Critical",
+            "order": 5,
+            "project_id": 1
+        },
+        {
+            "color": "#669933",
+            "id": 2,
+            "name": "Minor",
+            "order": 5,
+            "project_id": 1
+        },
+        {
+            "color": "#AAAAAA",
+            "id": 36,
+            "name": "New severity",
+            "order": 8,
+            "project_id": 1
+        },
+        {
+            "color": "#666666",
+            "id": 1,
+            "name": "Patch name",
+            "order": 10,
+            "project_id": 1
+        },
+        {
+            "color": "#999999",
+            "id": 37,
+            "name": "New severity name",
+            "order": 10,
+            "project_id": 1
+        }
+    ],
+    "slug": "project-0",
+    "tags": [],
+    "tags_colors": {},
+    "task_custom_attributes": [
+        {
+            "created_date": "2019-04-10T10:34:12.603273+00:00",
+            "description": "debitis dolorum soluta mollitia aliquid sapiente nesciunt molestias cum deserunt corporis officiis",
+            "extra": null,
+            "id": 5,
+            "modified_date": "2019-04-10T10:34:12.60329+00:00",
+            "name": "soluta",
+            "order": 1,
+            "project_id": 1,
+            "type": "richtext"
+        },
+        {
+            "created_date": "2019-04-10T10:34:12.601896+00:00",
+            "description": "totam autem aut fuga odit",
+            "extra": null,
+            "id": 4,
+            "modified_date": "2019-04-10T10:34:12.601912+00:00",
+            "name": "unde",
+            "order": 1,
+            "project_id": 1,
+            "type": "text"
+        },
+        {
+            "created_date": "2019-04-10T10:34:12.600663+00:00",
+            "description": "aliquid laboriosam soluta libero quo fugit molestiae impedit officia at",
+            "extra": null,
+            "id": 3,
+            "modified_date": "2019-04-10T10:34:12.60068+00:00",
+            "name": "libero",
+            "order": 1,
+            "project_id": 1,
+            "type": "date"
+        },
+        {
+            "created_date": "2019-04-10T10:34:12.59941+00:00",
+            "description": "laudantium totam dolorem minima nemo quaerat voluptate aliquam autem quasi distinctio inventore",
+            "extra": null,
+            "id": 2,
+            "modified_date": "2019-04-10T10:34:12.599427+00:00",
+            "name": "esse omnis soluta",
+            "order": 1,
+            "project_id": 1,
+            "type": "richtext"
+        },
+        {
+            "created_date": "2019-04-10T10:34:12.597033+00:00",
+            "description": "a sequi saepe quibusdam culpa optio accusantium minima obcaecati",
+            "extra": null,
+            "id": 1,
+            "modified_date": "2019-04-10T10:34:12.597055+00:00",
+            "name": "obcaecati quasi impedit",
+            "order": 1,
+            "project_id": 1,
+            "type": "dropdown"
+        }
+    ],
+    "task_duedates": [
+        {
+            "by_default": true,
+            "color": "#9dce0a",
+            "days_to_due": null,
+            "id": 1,
+            "name": "Default",
+            "order": 1,
+            "project_id": 1
+        },
+        {
+            "by_default": false,
+            "color": "#ff9900",
+            "days_to_due": 14,
+            "id": 2,
+            "name": "Due soon",
+            "order": 2,
+            "project_id": 1
+        },
+        {
+            "by_default": false,
+            "color": "#ff8a84",
+            "days_to_due": 0,
+            "id": 3,
+            "name": "Past due",
+            "order": 3,
+            "project_id": 1
+        }
+    ],
+    "task_statuses": [
+        {
+            "color": "#ffcc00",
+            "id": 3,
+            "is_closed": true,
+            "name": "Ready for test",
+            "order": 3,
+            "project_id": 1,
+            "slug": "ready-for-test"
+        },
+        {
+            "color": "#669900",
+            "id": 4,
+            "is_closed": true,
+            "name": "Closed",
+            "order": 4,
+            "project_id": 1,
+            "slug": "closed"
+        },
+        {
+            "color": "#ff9900",
+            "id": 2,
+            "is_closed": false,
+            "name": "In progress",
+            "order": 5,
+            "project_id": 1,
+            "slug": "in-progress"
+        },
+        {
+            "color": "#999999",
+            "id": 5,
+            "is_closed": false,
+            "name": "Needs Info",
+            "order": 5,
+            "project_id": 1,
+            "slug": "needs-info"
+        },
+        {
+            "color": "#AAAAAA",
+            "id": 36,
+            "is_closed": true,
+            "name": "New status",
+            "order": 8,
+            "project_id": 1,
+            "slug": "new-status"
+        },
+        {
+            "color": "#999999",
+            "id": 1,
+            "is_closed": false,
+            "name": "Patch status name",
+            "order": 10,
+            "project_id": 1,
+            "slug": "patch-status-name"
+        },
+        {
+            "color": "#999999",
+            "id": 37,
+            "is_closed": false,
+            "name": "New status name",
+            "order": 10,
+            "project_id": 1,
+            "slug": "new-status-name"
+        }
+    ],
+    "tasks_csv_uuid": null,
+    "total_activity": 211,
+    "total_activity_last_month": 211,
+    "total_activity_last_week": 211,
+    "total_activity_last_year": 211,
+    "total_closed_milestones": 0,
+    "total_fans": 8,
+    "total_fans_last_month": 8,
+    "total_fans_last_week": 8,
+    "total_fans_last_year": 8,
+    "total_memberships": 16,
+    "total_milestones": 6,
+    "total_story_points": 567.0,
+    "total_watchers": 14,
+    "totals_updated_datetime": "2019-04-10T10:47:03.960Z",
+    "transfer_token": "5:1hEAhg:pVIAXcLLOMEuw94ko7t2Y8BVzd8",
+    "us_duedates": [
+        {
+            "by_default": true,
+            "color": "#9dce0a",
+            "days_to_due": null,
+            "id": 1,
+            "name": "Default",
+            "order": 1,
+            "project_id": 1
+        },
+        {
+            "by_default": false,
+            "color": "#ff9900",
+            "days_to_due": 14,
+            "id": 2,
+            "name": "Due soon",
+            "order": 2,
+            "project_id": 1
+        },
+        {
+            "by_default": false,
+            "color": "#ff8a84",
+            "days_to_due": 0,
+            "id": 3,
+            "name": "Past due",
+            "order": 3,
+            "project_id": 1
+        }
+    ],
+    "us_statuses": [
+        {
+            "color": "#999999",
+            "id": 1,
+            "is_archived": false,
+            "is_closed": false,
+            "name": "New",
+            "order": 1,
+            "project_id": 1,
+            "slug": "new",
+            "wip_limit": null
+        },
+        {
+            "color": "#ff8a84",
+            "id": 2,
+            "is_archived": false,
+            "is_closed": false,
+            "name": "Ready",
+            "order": 2,
+            "project_id": 1,
+            "slug": "ready",
+            "wip_limit": null
+        },
+        {
+            "color": "#ff9900",
+            "id": 3,
+            "is_archived": false,
+            "is_closed": false,
+            "name": "In progress",
+            "order": 3,
+            "project_id": 1,
+            "slug": "in-progress",
+            "wip_limit": null
+        },
+        {
+            "color": "#fcc000",
+            "id": 4,
+            "is_archived": false,
+            "is_closed": false,
+            "name": "Ready for test",
+            "order": 4,
+            "project_id": 1,
+            "slug": "ready-for-test",
+            "wip_limit": null
+        },
+        {
+            "color": "#669900",
+            "id": 5,
+            "is_archived": false,
+            "is_closed": true,
+            "name": "Done",
+            "order": 5,
+            "project_id": 1,
+            "slug": "done",
+            "wip_limit": null
+        },
+        {
+            "color": "#5c3566",
+            "id": 6,
+            "is_archived": true,
+            "is_closed": true,
+            "name": "Archived",
+            "order": 6,
+            "project_id": 1,
+            "slug": "archived",
+            "wip_limit": null
+        }
+    ],
+    "userstories_csv_uuid": null,
+    "userstory_custom_attributes": [
+        {
+            "created_date": "2019-04-10T10:34:12.595392+00:00",
+            "description": "necessitatibus velit aliquam exercitationem debitis laboriosam",
+            "extra": null,
+            "id": 5,
+            "modified_date": "2019-04-10T10:34:12.595408+00:00",
+            "name": "pariatur",
+            "order": 1,
+            "project_id": 1,
+            "type": "date"
+        },
+        {
+            "created_date": "2019-04-10T10:34:12.594125+00:00",
+            "description": "vitae error dignissimos ipsa minus nostrum",
+            "extra": null,
+            "id": 4,
+            "modified_date": "2019-04-10T10:34:12.594141+00:00",
+            "name": "eveniet",
+            "order": 1,
+            "project_id": 1,
+            "type": "richtext"
+        },
+        {
+            "created_date": "2019-04-10T10:34:12.592731+00:00",
+            "description": "ex a nihil porro placeat",
+            "extra": null,
+            "id": 3,
+            "modified_date": "2019-04-10T10:34:12.592747+00:00",
+            "name": "obcaecati quaerat",
+            "order": 1,
+            "project_id": 1,
+            "type": "checkbox"
+        },
+        {
+            "created_date": "2019-04-10T10:34:12.591471+00:00",
+            "description": "inventore ab iusto optio tempora hic",
+            "extra": null,
+            "id": 2,
+            "modified_date": "2019-04-10T10:34:12.591488+00:00",
+            "name": "facilis temporibus",
+            "order": 5,
+            "project_id": 1,
+            "type": "url"
+        },
+        {
+            "created_date": "2019-04-10T10:44:12.96406+00:00",
+            "description": "Duration in minutes",
+            "extra": null,
+            "id": 26,
+            "modified_date": "2019-04-10T10:44:12.967118+00:00",
+            "name": "Duration 2",
+            "order": 8,
+            "project_id": 1,
+            "type": "text"
+        },
+        {
+            "created_date": "2019-04-10T10:34:12.589298+00:00",
+            "description": "vel omnis culpa quisquam nulla",
+            "extra": null,
+            "id": 1,
+            "modified_date": "2019-04-10T10:44:12.874928+00:00",
+            "name": "Duration 1",
+            "order": 10,
+            "project_id": 1,
+            "type": "richtext"
+        },
+        {
+            "created_date": "2019-04-10T10:44:13.048269+00:00",
+            "description": "",
+            "extra": null,
+            "id": 27,
+            "modified_date": "2019-04-10T10:44:13.051518+00:00",
+            "name": "Duration 3",
+            "order": 1554893053034,
+            "project_id": 1,
+            "type": "text"
+        }
+    ],
+    "videoconferences": null,
+    "videoconferences_extra_data": null
+}
+----

@@ -1,0 +1,16 @@
+To create milestone send a POST request with the following data:
+
+- *project* (required): project id
+- *name* (required): string
+- *estimated_start* (required): iso date (YYYY-MM-DD)
+- *estimated_finish* (required): iso date (YYYY-MM-DD)
+- *disponibility*: float
+- *slug*: slug
+- *order*: integer
+- *watchers*: array of watcher id's
+
+include::../generated/milestones-create-cmd.adoc[]
+
+include::../generated/milestones-simple-create-cmd.adoc[]
+
+When the creation is successful, the HTTP response is a 201 Created and the response body is a JSON link:#object-milestone-detail[milestone detail object]

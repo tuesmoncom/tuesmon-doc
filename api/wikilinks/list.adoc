@@ -1,0 +1,11 @@
+To list wiki links send a GET request with the following parameters:
+
+include::../generated/wiki-links-list-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON list of link:#object-wiki-link-detail[wiki link detail objects]
+
+The results can be filtered using the following parameters:
+
+- *project*: project id
+
+include::../generated/wiki-links-filtered-list-cmd.adoc[]

@@ -1,0 +1,9 @@
+To resolve the id of a project send a GET request with the following parameters:
+
+- *project* (required): the project slug trying to be resolved
+
+include::../generated/resolver-project-cmd.adoc[]
+
+The response body is a JSON object containing the project id
+
+include::../generated/resolver-project-output.adoc[]

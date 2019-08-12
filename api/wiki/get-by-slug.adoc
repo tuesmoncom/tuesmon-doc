@@ -1,0 +1,5 @@
+To get a wiki page send a GET request specifying the wiki page slug and the project id as parameters:
+
+include::../generated/wiki-get-by-slug-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-wiki-detail[wiki page detail object]

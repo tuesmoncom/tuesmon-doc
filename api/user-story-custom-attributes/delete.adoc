@@ -1,0 +1,5 @@
+To delete user story custom attributes send a DELETE specifying the user story custom attribute id in the url
+
+include::../generated/user-stories-custom-attributes-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

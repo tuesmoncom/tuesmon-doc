@@ -1,0 +1,90 @@
+[source,json]
+----
+{
+    "assigned_to": null,
+    "assigned_to_extra_info": null,
+    "assigned_users": [],
+    "attachments": [],
+    "backlog_order": 2,
+    "blocked_note": "",
+    "blocked_note_html": "",
+    "client_requirement": false,
+    "comment": "",
+    "created_date": "2019-04-10T10:44:08.286Z",
+    "description": "Implement API CALL",
+    "description_html": "<p>Implement API CALL</p>",
+    "due_date": null,
+    "due_date_reason": "",
+    "due_date_status": "not_set",
+    "epic_order": null,
+    "epics": null,
+    "external_reference": null,
+    "finish_date": null,
+    "generated_from_issue": null,
+    "generated_from_task": null,
+    "id": 138,
+    "is_blocked": false,
+    "is_closed": false,
+    "is_voter": false,
+    "is_watcher": false,
+    "kanban_order": 37,
+    "milestone": null,
+    "milestone_name": null,
+    "milestone_slug": null,
+    "modified_date": "2019-04-10T10:44:08.291Z",
+    "origin_issue": null,
+    "origin_task": null,
+    "owner": 5,
+    "owner_extra_info": {
+        "big_photo": null,
+        "full_name_display": "Administrator",
+        "gravatar_id": "64e1b8d34f425d19e1ee2ea7236d3028",
+        "id": 5,
+        "is_active": true,
+        "photo": null,
+        "username": "admin"
+    },
+    "points": {
+        "1": 4,
+        "2": 3,
+        "3": 2,
+        "4": 1
+    },
+    "project": 1,
+    "project_extra_info": {
+        "id": 1,
+        "logo_small_url": null,
+        "name": "Project Example 0",
+        "slug": "project-0"
+    },
+    "ref": 83,
+    "sprint_order": 2,
+    "status": 2,
+    "status_extra_info": {
+        "color": "#ff8a84",
+        "is_closed": false,
+        "name": "Ready"
+    },
+    "subject": "Customer personal data",
+    "tags": [
+        [
+            "service catalog",
+            null
+        ],
+        [
+            "customer",
+            null
+        ]
+    ],
+    "tasks": [],
+    "team_requirement": false,
+    "total_attachments": 0,
+    "total_comments": 0,
+    "total_points": 1.5,
+    "total_voters": 0,
+    "total_watchers": 0,
+    "tribe_gig": null,
+    "version": 1,
+    "watchers": []
+}
+----

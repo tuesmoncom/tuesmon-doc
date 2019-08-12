@@ -1,0 +1,5 @@
+To delete tasks send a DELETE specifying the task id in the url
+
+include::../generated/tasks-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

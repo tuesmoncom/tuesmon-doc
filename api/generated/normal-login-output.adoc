@@ -1,0 +1,7 @@
+[source,json]
+----
+{
+    "_error_message": "Username or password does not matches user.",
+    "_error_type": "tuesmon.base.exceptions.WrongArguments"
+}
+----

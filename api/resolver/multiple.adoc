@@ -1,0 +1,7 @@
+To resolve the multiple ids you can send a GET mixing parameters from the previous examples:
+
+include::../generated/resolver-multiple-cmd.adoc[]
+
+The response body is a JSON object containing the project and the task ids
+
+include::../generated/resolver-multiple-output.adoc[]

@@ -1,0 +1,5 @@
+To list user storage data send a GET request with the following parameters:
+
+include::../generated/user-storage-list-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON list of link:#object-user-storage-detail[user storage data objects]

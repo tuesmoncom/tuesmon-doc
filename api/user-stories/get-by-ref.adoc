@@ -1,0 +1,8 @@
+To get a user story send a GET request specifying the user story reference and one of the following parameters:
+
+- project (project id)
+- project__slug
+
+include::../generated/user-stories-get-by-ref-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-userstory-detail-get[user story detail (GET) object]

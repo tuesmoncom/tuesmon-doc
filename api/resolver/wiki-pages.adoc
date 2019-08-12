@@ -1,0 +1,10 @@
+To resolve the id of a wiki page send a GET request with the following parameters:
+
+- *project* (required): the project slug trying to be resolved
+- *wikipage*(required): the wiki-page slug trying to be resolved
+
+include::../generated/resolver-wiki-page-cmd.adoc[]
+
+The response body is a JSON object containing the project and the wiki page ids
+
+include::../generated/resolver-wiki-page-output.adoc[]

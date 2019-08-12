@@ -1,0 +1,5 @@
+To get the list of watchers from a wiki page send a GET request specifying the wiki page id in the url
+
+include::../generated/wiki-watchers-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON list of link:#object-wiki-watcher-detail[wiki page watcher object]

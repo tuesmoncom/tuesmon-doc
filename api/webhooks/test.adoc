@@ -1,0 +1,5 @@
+To test a webhook send a POST request specifying the webhook id in the url
+
+include::../generated/webhooks-test-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-webhook-log-detail[webhook log detail object] with the resault of the test.

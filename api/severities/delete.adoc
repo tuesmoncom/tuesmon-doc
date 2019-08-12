@@ -1,0 +1,5 @@
+To delete severities send a DELETE specifying the severity id in the url
+
+include::../generated/severities-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

@@ -1,0 +1,14 @@
+To create points send a POST request with the following data:
+
+- *color*: in hexadecimal
+- *name* (required)
+- *order*: integer
+- *value* (required): integer
+- *project*: (required): project id
+
+
+include::../generated/points-create-cmd.adoc[]
+
+include::../generated/points-simple-create-cmd.adoc[]
+
+When the creation is successful, the HTTP response is a 201 Created and the response body is a JSON link:#object-point-detail[point detail object]

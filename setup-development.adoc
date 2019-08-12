@@ -1,0 +1,461 @@
+= Tuesmon: Setup development environment
+:toc: left
+:numbered:
+:source-highlighter: pygments
+:pygments-style: friendly
+
+Introduction
+------------
+
+This documentation explains how to setup the Tuesmon development environment.
+
+The Tuesmon platform consists of three main components:
+
+- **tuesmon-back** (backend/api)
+- **tuesmon-front** (frontend)
+- **tuesmon-events** (websockets gateway) (optional)
+
+And each one has its own dependencies, at compile time and runtime.
+
+Before starting
+---------------
+
+This tutorial assumes that you are using a clean, recently updated, **ubuntu 16.04** image.
+Notes for Debian installations are included at the end of the appropriate sections.
+
+**Tuesmon installation must be done with a "normal" user, never with root.**
+
+Backend environment
+-------------------
+
+This section helps with the download and configuration of the backend (api) Tuesmon service.
+
+
+Install dependencies
+~~~~~~~~~~~~~~~~~~~~
+
+The backend is written mainly in python (3.5) but for some third party libraries we need to install a
+C compiler and development headers.
+
+[source,bash]
+----
+sudo apt-get install -y build-essential binutils-doc autoconf flex bison libjpeg-dev
+sudo apt-get install -y libfreetype6-dev zlib1g-dev libzmq3-dev libgdbm-dev libncurses5-dev
+sudo apt-get install -y automake libtool libffi-dev libssl-dev curl git tmux gettext
+----
+
+Setup a database
+~~~~~~~~~~~~~~~~
+
+**tuesmon-back** also requires postgresql (>= 9.4) as a database
+
+Install postgresql:
+
+[source,bash]
+----
+sudo apt-get install -y postgresql postgresql-contrib
+sudo apt-get install -y postgresql-doc postgresql-server-dev-all
+----
+
+And setup the initial user, database, and permissions:
+
+[source,bash]
+----
+sudo -u postgres psql -c "CREATE ROLE tuesmon LOGIN PASSWORD 'changeme';"
+sudo -u postgres createdb tuesmon -O tuesmon --encoding='utf-8' --locale=en_US.utf8 --template=template0
+echo 'local all tuesmon peer' | sudo -u postgres tee -a $(sudo -u postgres psql -t -P format=unaligned -c 'show hba_file') > /dev/null
+sudo service postgresql reload
+----
+
+Setup python environment
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+To run **tuesmon-back** you should have python (>=3.5) installed along with some other third party
+libraries. As a first step, start installing python:
+
+[source,bash]
+----
+sudo apt-get install -y python3 python3-pip python3-virtualenv python-dev python3-dev python-pip python-virtualenv
+sudo apt-get install libxml2-dev libxslt-dev
+----
+
+To manage dependencies tuesmon uses pipenv.
+
+[NOTE]
+As of November 2018, there are several options for installing pipenv.
+Please check the https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv[pipenv documentation] and choose your preferred method.
+
+The next step is to download the code from GitHub and install its dependencies:
+
+.Download the code
+[source,bash]
+----
+cd ~
+git clone https://github.com/tuesmoncom/tuesmon-back.git tuesmon-back
+cd tuesmon-back
+git checkout master
+----
+
+.Create a new virtualenv and install dependencies
+[source,bash]
+----
+pipenv sync --dev
+----
+
+[NOTE]
+It is important to use the `pipenv sync` command instead of `pipenv install`.
+The latter will update versions and perform a dependency resolution so the file `Pipfile.lock` might be modified
+and probably this is not intended.
+Of course you should use `pipenv install` when the goal is to add or upgrade a package.
+
+
+.Activate the virtualenv
+[source,bash]
+----
+pipenv shell
+----
+
+.Adjust Django Configuration
+
+You can tune your own environment configuration by editing a `settings/local.py`
+configuration file to overwrite any setting in `settings/common.py`.
+
+For a basic configuration that works with these instructions, simply copy
+`settings/local.py.example` to `settings/local.py`
+(but remember to edit your postgresql password, to match what you picked for the
+`CREATE ROLE tuesmon LOGIN PASSWORD` command above).
+
+Otherwise, just put this in your own `~/tuesmon-back/settings/local.py`
+[source,python]
+----
+from .common import *
+
+# YOUR OWN CONFIGURATION HERE
+----
+
+.Populate the database with initial basic data
+[source,bash]
+----
+python manage.py migrate --noinput
+python manage.py loaddata initial_user
+python manage.py loaddata initial_project_templates
+python manage.py compilemessages
+python manage.py collectstatic --noinput
+python manage.py sample_data
+----
+
+This creates a new user **admin** with password **123123** and some sample data.
+
+Run
+~~~
+
+To run the development environment you can run:
+
+[source,bash]
+----
+pipenv shell  # enable the tuesmon virtualenv
+python manage.py runserver
+----
+
+Then you should be able to see a json represention of the list of endpoints at the url http://localhost:8000/api/v1/
+
+Async tasks (Optional)
+~~~~~~~~~~~~~~~~~~~~~~
+
+The default behavior in Tuesmon is to do all tasks synchronously, but some of them
+can be completely asynchronous (for example webhooks or import/export). To do
+this, you have to configure and install the celery service requirements.
+
+Install `rabbitmq-server` and `redis-server`:
+
+[source,bash]
+----
+sudo apt-get install -y rabbitmq-server redis-server
+----
+
+To run celery with Tuesmon you have to include the following line in your local.py:
+
+[source,python]
+----
+CELERY_ENABLED = True
+----
+
+You can configure other broker or results backends as needed. If you need more
+info about configuration you can check the celery documentation web page:
+http://docs.celeryproject.org/en/latest/index.html
+
+Once you have configured celery on Tuesmon, you have to run celery to process the
+tasks. You can run celery with:
+
+[source,bash]
+----
+pipenv shell tuesmon  # enable the tuesmon virtualenv
+celery -A tuesmon worker -l info -E
+----
+
+Debian installation notes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Debian stable (Jessie) provides all needed requirements, but old-stable (Wheezy) does not.
+
+The latest Python available from Wheezy's apt repositories is only 3.1 and insufficient for tuesmon-back.
+Python 3.5 is available from stable (Jessie) if you are comfortable using mixed versions in your apt sources.
+Otherwise, you must build Python 3.5 from source (see https://www.python.org/downloads/source/ for links).
+When building from source, if the bz2 development libraries are not already present on your system, then you must first:
+[source,bash]
+----
+sudo apt-get install libbz2-dev
+----
+Or else Python will build without the bz2 module necessary for some pip installed requirements.
+
+The latest Postgresql available for Wheezy is 9.1, but a fully Wheezy-compatible 9.4 build is available from
+the official Postgresql apt repositories, however:
+[source,bash]
+----
+echo "deb http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main" | sudo tee -a /etc/apt/sources.list
+sudo apt-get update
+----
+
+
+Frontend environment
+--------------------
+
+This section helps you install the frontend application
+
+
+Install dependencies
+~~~~~~~~~~~~~~~~~~~~
+
+The frontend application runs entirely in a browser, and thus must be deployed as javascript, css and html.
+In the case of **tuesmon-front** we have used other languages. Because of this, you will need to install some
+additional dependencies that compile **tuesmon-front** code into something the browser can understand.
+
+
+Ruby and Gems
+^^^^^^^^^^^^^
+
+Ruby is used mainly for compiling *sass* (css preprocessor). It is also used for sass linting but that
+is only in development environments.
+
+.Install ruby
+[source,bash]
+----
+sudo apt-get install -y ruby
+sudo apt-get install -y ruby-all-dev
+----
+
+.Install required gems
+[source,bash]
+----
+gem install --user-install sass scss_lint
+----
+
+.Make gems' scripts available from your path by putting this in your *~/.bashrc*
+[source,bash]
+----
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+----
+
+Restart the shell, source ~/.bashrc, or run bash again to make the path changes available.
+
+
+NodeJS and friends
+^^^^^^^^^^^^^^^^^^
+
+NodeJS is used to execute **gulp**, a task execution tool used mainly for executing deployment and compilation tasks.
+
+.Install nodejs
+[source,bash]
+----
+sudo apt-get install -y nodejs npm
+----
+
+.Make sure your bash responds to the node command to have a smooth installation of gulp
+[source, bash]
+----
+node
+----
+If you get a "Command not found" error, then run
+[source, bash]
+----
+sudo update-alternatives --install /usr/bin/node nodejs /usr/bin/nodejs 100
+----
+
+(If you're on Debian, see the Debian-specific installation notes below.)
+
+.Install **gulp** using the recently installed npm
+[source,bash]
+----
+sudo npm install -g gulp
+----
+
+.Download the code
+[source,bash]
+----
+cd ~
+git clone https://github.com/tuesmoncom/tuesmon-front.git tuesmon-front
+cd tuesmon-front
+git checkout stable
+----
+
+.Install all dependencies needed to run gulp and compile tuesmon-front
+[source,bash]
+----
+npm install
+----
+
+Debian installation notes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+While Debian stable (Jessie), provides a nodejs package out of the box, old-stable (Wheezy) does not.
+You can access one via the wheezy-backports apt repository, however, which can be added to your system as follows:
+[source,bash]
+----
+echo "deb http://ftp.us.debian.org/debian wheezy-backports main" | sudo tee -a /etc/apt/sources.list
+----
+Then, after a:
+[source,bash]
+----
+sudo apt-get update
+----
+You can:
+[source,bash]
+----
+sudo apt-get install nodejs
+----
+
+Note that Debian installs the executable as nodejs not node, so you will need to provide this alias by issuing the following command:
+[source,bash]
+----
+sudo update-alternatives --install /usr/bin/node nodejs /usr/bin/nodejs 100
+----
+
+Stable (Jessie) also provides an npm package, but npm is not available for old-stable (Wheezy), not even from wheezy-backports.
+Thus, you will need to install it manually via:
+[source,bash]
+----
+curl https://www.npmjs.com/install.sh | sudo sh
+----
+
+Final steps
+~~~~~~~~~~~
+
+Having installed all the dependencies, all you have left to do is to run the code itself.
+
+.Run gulp
+[source,bash]
+----
+cd ~/tuesmon-front
+gulp
+----
+
+And now, you can configure it copying the
+`dist/conf.example.json` to `dist/conf.json`
+and editing it.
+
+.Copy and edit initial configuration on ~/tuesmon-front/dist/conf.json
+[source,json]
+----
+{
+    "api": "http://localhost:8000/api/v1/",
+    "eventsUrl": null,
+    "eventsMaxMissedHeartbeats": 5,
+    "eventsHeartbeatIntervalTime": 60000,
+    "debug": true,
+    "debugInfo": false,
+    "defaultLanguage": "en",
+    "themes": ["tuesmon"],
+    "defaultTheme": "tuesmon",
+    "publicRegisterEnabled": true,
+    "feedbackEnabled": true,
+    "privacyPolicyUrl": null,
+    "termsOfServiceUrl": null,
+    "maxUploadFileSize": null,
+    "contribPlugins": []
+
+}
+----
+
+Now, you can access http://localhost:9001 for access to tuesmon-front.
+
+[NOTE]
+If you have npm errors when executing gulp delete the tmp files and install the
+dependencies again.
+
+[source,bash]
+----
+rm -rf ~/.npm; rm -rf node_modules
+npm install
+gulp
+----
+
+Events installation
+-------------------
+
+**This step is completelly optional and can be skipped**
+
+Tuesmon events needs rabbitmq (the message broker) to be installed
+
+.Installing rabbitmq
+[source,bash]
+----
+sudo  apt-get install rabbitmq-server
+----
+
+.Creating a tuesmon user and virtualhost for rabbitmq
+[source,bash]
+----
+sudo rabbitmqctl add_user tuesmon PASSWORD
+sudo rabbitmqctl add_vhost tuesmon
+sudo rabbitmqctl set_permissions -p tuesmon tuesmon ".*" ".*" ".*"
+----
+
+.Update your tuesmon-back settings to include the following lines in your local.py:
+[source,python]
+----
+EVENTS_PUSH_BACKEND = "tuesmon.events.backends.rabbitmq.EventsPushBackend"
+EVENTS_PUSH_BACKEND_OPTIONS = {"url": "amqp://tuesmon:PASSWORD@localhost:5672/tuesmon"}
+----
+
+The next step is downloading the code from GitHub and installing the dependencies:
+
+.Download the code
+[source,bash]
+----
+cd ~
+git clone https://github.com/tuesmoncom/tuesmon-events.git tuesmon-events
+cd tuesmon-events
+----
+
+.Install all the javascript dependencies needed
+[source,bash]
+----
+npm install
+sudo npm install -g coffee-script
+----
+
+.Copy config.example.json to config.json and edit it to update the values for your rabbitmq uri and secret key.
+[source,bash]
+----
+cp config.example.json config.json
+----
+
+.Your config.json should look something like:
+[source,json]
+----
+{
+    "url": "amqp://tuesmon:PASSWORD@localhost:5672/tuesmon",
+    "secret": "mysecret",
+    "webSocketServer": {
+        "port": 8888
+    }
+}
+----
+
+.Now run the tuesmon events service
+[source,bash]
+----
+coffee index.coffee
+----

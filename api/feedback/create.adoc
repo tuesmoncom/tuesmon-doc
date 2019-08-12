@@ -1,0 +1,7 @@
+To create feedback send a POST request with the following data:
+
+- *comment* (required)
+
+include::../generated/feedback-cmd.adoc[]
+
+When created successfully, the HTTP response is a 201 Created and the response body is a JSON link:#object-feedback-detail[feedback object]

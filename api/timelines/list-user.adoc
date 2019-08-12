@@ -1,0 +1,7 @@
+To list a user timeline send a GET request with the following parameters:
+
+include::../generated/users-timeline-get-cmd.adoc[]
+
+This API call returns only actions directly executed by the specified user.
+
+The HTTP response is a 200 OK and the response body is a JSON list of link:#object-timeline-detail[timeline entry detail]

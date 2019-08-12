@@ -1,0 +1,5 @@
+To get the list of voters from an issue send a GET request specifying the issue id in the url
+
+include::../generated/issues-voters-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-issue-voters-detail[issue voters detail object]

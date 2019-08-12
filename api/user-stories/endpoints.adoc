@@ -1,0 +1,106 @@
+[cols="3*", options="header"]
+|===
+| URL
+| Method
+| Functionality
+
+| /api/v1/userstories
+| GET
+| link:#user-stories-list[List user stories]
+
+| /api/v1/userstories
+| POST
+| link:#user-stories-create[Create user story]
+
+| /api/v1/userstories/\{userStoryId}
+| GET
+| link:#user-stories-get[Get user story]
+
+| /api/v1/userstories/by_ref?ref=\{userStoryRef}&project=\{userStoryId}
+| GET
+| link:#user-stories-get-by-ref[Get user story]
+
+| /api/v1/userstories/\{userStoryId}
+| PUT
+| link:#user-stories-edit[Modify user story]
+
+| /api/v1/userstories/\{userStoryId}
+| PATCH
+| link:#user-stories-edit[Modify partially a user story]
+
+| /api/v1/userstories/\{userStoryId}
+| DELETE
+| link:#user-stories-delete[Delete a user story]
+
+| /api/v1/userstories/bulk_create
+| POST
+| link:#user-stories-bulk-create[Create user stories un bulk mode]
+
+| /api/v1/userstories/bulk_update_backlog_order
+| POST
+| link:#user-stories-bulk-update-backlog-order[Update user stories order for backlog in bulk mode]
+
+| /api/v1/userstories/bulk_update_kanban_order
+| POST
+| link:#user-stories-bulk-update-kanban-order[Update user stories order for kanban in bulk mode]
+
+| /api/v1/userstories/bulk_update_sprint_order
+| POST
+| link:#user-stories-bulk-update-sprint-order[Update user stories order for sprint in bulk mode]
+
+| /api/v1/userstories/bulk_update_milestone
+| POST
+| link:#user-stories-bulk-update-milestone[Update user stories sprint in bulk mode]
+
+| /api/v1/userstories/filters_data?project=\{projectId}
+| GET
+| link:#user-stories-get-filters-data[Get filters data]
+
+| /api/v1/userstories/\{userStoryId}/upvote
+| POST
+| link:#user-stories-upvote[Add star to a user story]
+
+| /api/v1/userstories/\{userStoryId}/downvote
+| POST
+| link:#user-stories-downvote[Remove star from user story]
+
+| /api/v1/userstories/\{userStoryId}/voters
+| GET
+| link:#user-stories-voters[Get user story voters]
+
+| /api/v1/userstories/\{userStoryId}/watch
+| POST
+| link:#user-stories-watch[Watch a user story]
+
+| /api/v1/userstories/\{userStoryId}/unwatch
+| POST
+| link:#user-stories-unwatch[Unwatch a user story]
+
+| /api/v1/userstories/\{userStoryId}/watchers
+| GET
+| link:#user-stories-watchers[Get user story watchers]
+
+| /api/v1/userstories/attachments
+| GET
+| link:#user-stories-list-attachments[List user story attachments]
+
+| /api/v1/userstories/attachments
+| POST
+| link:#user-stories-create-attachment[Create user story attachments]
+
+| /api/v1/userstories/attachments/\{userStoryAttachmentId}
+| GET
+| link:#user-stories-get-attachment[Get user story attachments]
+
+| /api/v1/userstories/attachments/\{userStoryAttachmentId}
+| PUT
+| link:#user-stories-edit-attachment[Modify user story attachments]
+
+| /api/v1/userstories/attachments/\{userStoryAttachmentId}
+| PATCH
+| link:#user-stories-edit-attachment[Modify partially a user story attachments]
+
+| /api/v1/userstories/attachments/\{userStoryAttachmentId}
+| DELETE
+| link:#user-stories-delete-attachment[Delete a user story attachments]
+|===

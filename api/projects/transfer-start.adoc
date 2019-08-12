@@ -1,0 +1,7 @@
+To start the transfer of one of your projects to another user send a POST request specifying the project id in the url and containing the following data:
+
+- *user*: user id of other admin member of the project.
+
+include::../generated/projects-start-tranfer-cmd.adoc[]
+
+The HTTP response is a 200 OK with an empty body response

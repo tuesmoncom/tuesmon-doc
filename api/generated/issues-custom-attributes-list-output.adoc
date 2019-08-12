@@ -1,0 +1,335 @@
+[source,json]
+----
+[
+    {
+        "created_date": "2019-04-10T10:34:12.608Z",
+        "description": "facere corrupti ipsa odit mollitia saepe officiis",
+        "extra": null,
+        "id": 3,
+        "modified_date": "2019-04-10T10:34:12.608Z",
+        "name": "doloremque id",
+        "order": 1,
+        "project": 1,
+        "type": "dropdown"
+    },
+    {
+        "created_date": "2019-04-10T10:34:12.604Z",
+        "description": "officiis repudiandae dignissimos similique consequatur mollitia at enim ad molestias praesentium",
+        "extra": null,
+        "id": 1,
+        "modified_date": "2019-04-10T10:34:12.604Z",
+        "name": "fugiat optio consequuntur",
+        "order": 1,
+        "project": 1,
+        "type": "dropdown"
+    },
+    {
+        "created_date": "2019-04-10T10:34:12.609Z",
+        "description": "fugiat porro officia deleniti quidem ipsam",
+        "extra": null,
+        "id": 4,
+        "modified_date": "2019-04-10T10:34:12.609Z",
+        "name": "velit",
+        "order": 1,
+        "project": 1,
+        "type": "text"
+    },
+    {
+        "created_date": "2019-04-10T10:34:12.606Z",
+        "description": "minus quibusdam neque eveniet repellendus ex dolorum optio ullam vitae",
+        "extra": null,
+        "id": 2,
+        "modified_date": "2019-04-10T10:34:12.607Z",
+        "name": "doloribus ducimus nulla",
+        "order": 5,
+        "project": 1,
+        "type": "checkbox"
+    },
+    {
+        "created_date": "2019-04-10T10:56:04.844Z",
+        "description": "Duration in minutes",
+        "extra": null,
+        "id": 31,
+        "modified_date": "2019-04-10T10:56:04.847Z",
+        "name": "Duration 2",
+        "order": 8,
+        "project": 1,
+        "type": "text"
+    },
+    {
+        "created_date": "2019-04-10T10:34:12.611Z",
+        "description": "voluptate rem perspiciatis ipsum",
+        "extra": null,
+        "id": 5,
+        "modified_date": "2019-04-10T10:56:04.777Z",
+        "name": "Duration 1",
+        "order": 10,
+        "project": 1,
+        "type": "checkbox"
+    },
+    {
+        "created_date": "2019-04-10T10:56:04.908Z",
+        "description": "",
+        "extra": null,
+        "id": 32,
+        "modified_date": "2019-04-10T10:56:04.911Z",
+        "name": "Duration 3",
+        "order": 1554893764898,
+        "project": 1,
+        "type": "text"
+    },
+    {
+        "created_date": "2019-04-10T10:48:24.046Z",
+        "description": "beatae adipisci ut",
+        "extra": null,
+        "id": 26,
+        "modified_date": "2019-04-10T10:48:24.046Z",
+        "name": "doloremque",
+        "order": 1,
+        "project": 10,
+        "type": "url"
+    },
+    {
+        "created_date": "2019-04-10T10:48:24.050Z",
+        "description": "accusantium labore aliquam quibusdam odit illum dolores recusandae sapiente",
+        "extra": null,
+        "id": 27,
+        "modified_date": "2019-04-10T10:48:24.050Z",
+        "name": "iusto",
+        "order": 1,
+        "project": 10,
+        "type": "dropdown"
+    },
+    {
+        "created_date": "2019-04-10T10:48:24.052Z",
+        "description": "quisquam laboriosam eligendi sunt enim autem voluptatum",
+        "extra": null,
+        "id": 28,
+        "modified_date": "2019-04-10T10:48:24.052Z",
+        "name": "nemo",
+        "order": 1,
+        "project": 10,
+        "type": "date"
+    },
+    {
+        "created_date": "2019-04-10T10:48:24.054Z",
+        "description": "cumque voluptatum earum eum eligendi dolorem tempore nostrum et pariatur vitae fuga",
+        "extra": null,
+        "id": 29,
+        "modified_date": "2019-04-10T10:48:24.054Z",
+        "name": "perspiciatis quia minima",
+        "order": 1,
+        "project": 10,
+        "type": "text"
+    },
+    {
+        "created_date": "2019-04-10T10:48:24.056Z",
+        "description": "nemo explicabo debitis obcaecati vel assumenda sequi ut architecto minima rerum",
+        "extra": null,
+        "id": 30,
+        "modified_date": "2019-04-10T10:48:24.056Z",
+        "name": "possimus",
+        "order": 1,
+        "project": 10,
+        "type": "richtext"
+    },
+    {
+        "created_date": "2019-04-10T10:34:51.121Z",
+        "description": "totam placeat nobis reiciendis ipsa optio aliquid eveniet iure voluptate",
+        "extra": null,
+        "id": 8,
+        "modified_date": "2019-04-10T10:34:51.121Z",
+        "name": "assumenda",
+        "order": 1,
+        "project": 2,
+        "type": "multiline"
+    },
+    {
+        "created_date": "2019-04-10T10:34:51.123Z",
+        "description": "maiores pariatur quos architecto",
+        "extra": null,
+        "id": 9,
+        "modified_date": "2019-04-10T10:34:51.123Z",
+        "name": "cupiditate mollitia maxime",
+        "order": 1,
+        "project": 2,
+        "type": "date"
+    },
+    {
+        "created_date": "2019-04-10T10:34:51.120Z",
+        "description": "alias quam aliquam maiores repudiandae commodi nam fugiat accusantium eligendi voluptas",
+        "extra": null,
+        "id": 7,
+        "modified_date": "2019-04-10T10:34:51.120Z",
+        "name": "eos",
+        "order": 1,
+        "project": 2,
+        "type": "dropdown"
+    },
+    {
+        "created_date": "2019-04-10T10:34:51.125Z",
+        "description": "quidem maxime nisi neque perspiciatis id optio eaque",
+        "extra": null,
+        "id": 10,
+        "modified_date": "2019-04-10T10:34:51.125Z",
+        "name": "nobis facere",
+        "order": 1,
+        "project": 2,
+        "type": "text"
+    },
+    {
+        "created_date": "2019-04-10T10:34:51.118Z",
+        "description": "provident facilis exercitationem repellendus modi veritatis aliquam reprehenderit",
+        "extra": null,
+        "id": 6,
+        "modified_date": "2019-04-10T10:34:51.118Z",
+        "name": "quisquam",
+        "order": 1,
+        "project": 2,
+        "type": "text"
+    },
+    {
+        "created_date": "2019-04-10T10:35:51.652Z",
+        "description": "beatae adipisci ut",
+        "extra": null,
+        "id": 13,
+        "modified_date": "2019-04-10T10:35:51.652Z",
+        "name": "doloremque",
+        "order": 1,
+        "project": 3,
+        "type": "url"
+    },
+    {
+        "created_date": "2019-04-10T10:35:51.649Z",
+        "description": "accusantium labore aliquam quibusdam odit illum dolores recusandae sapiente",
+        "extra": null,
+        "id": 11,
+        "modified_date": "2019-04-10T10:35:51.649Z",
+        "name": "iusto",
+        "order": 1,
+        "project": 3,
+        "type": "dropdown"
+    },
+    {
+        "created_date": "2019-04-10T10:35:51.655Z",
+        "description": "quisquam laboriosam eligendi sunt enim autem voluptatum",
+        "extra": null,
+        "id": 15,
+        "modified_date": "2019-04-10T10:35:51.655Z",
+        "name": "nemo",
+        "order": 1,
+        "project": 3,
+        "type": "date"
+    },
+    {
+        "created_date": "2019-04-10T10:35:51.653Z",
+        "description": "cumque voluptatum earum eum eligendi dolorem tempore nostrum et pariatur vitae fuga",
+        "extra": null,
+        "id": 14,
+        "modified_date": "2019-04-10T10:35:51.653Z",
+        "name": "perspiciatis quia minima",
+        "order": 1,
+        "project": 3,
+        "type": "text"
+    },
+    {
+        "created_date": "2019-04-10T10:35:51.651Z",
+        "description": "nemo explicabo debitis obcaecati vel assumenda sequi ut architecto minima rerum",
+        "extra": null,
+        "id": 12,
+        "modified_date": "2019-04-10T10:35:51.651Z",
+        "name": "possimus",
+        "order": 1,
+        "project": 3,
+        "type": "richtext"
+    },
+    {
+        "created_date": "2019-04-10T10:36:25.639Z",
+        "description": "dolor delectus animi voluptatem modi maxime officia tenetur ducimus earum recusandae",
+        "extra": null,
+        "id": 16,
+        "modified_date": "2019-04-10T10:36:25.639Z",
+        "name": "cupiditate sed",
+        "order": 1,
+        "project": 4,
+        "type": "url"
+    },
+    {
+        "created_date": "2019-04-10T10:36:25.643Z",
+        "description": "odit minima dolores esse nemo repudiandae sequi porro quos harum numquam maxime",
+        "extra": null,
+        "id": 19,
+        "modified_date": "2019-04-10T10:36:25.643Z",
+        "name": "dolorum",
+        "order": 1,
+        "project": 4,
+        "type": "date"
+    },
+    {
+        "created_date": "2019-04-10T10:36:25.642Z",
+        "description": "eius repellat dolorum quae error culpa enim unde recusandae dignissimos assumenda",
+        "extra": null,
+        "id": 18,
+        "modified_date": "2019-04-10T10:36:25.642Z",
+        "name": "ducimus qui ipsam",
+        "order": 1,
+        "project": 4,
+        "type": "checkbox"
+    },
+    {
+        "created_date": "2019-04-10T10:36:25.644Z",
+        "description": "quam doloribus animi distinctio aliquid vitae sit neque",
+        "extra": null,
+        "id": 20,
+        "modified_date": "2019-04-10T10:36:25.644Z",
+        "name": "eius",
+        "order": 1,
+        "project": 4,
+        "type": "date"
+    },
+    {
+        "created_date": "2019-04-10T10:36:25.641Z",
+        "description": "id culpa natus tenetur",
+        "extra": null,
+        "id": 17,
+        "modified_date": "2019-04-10T10:36:25.641Z",
+        "name": "numquam quisquam",
+        "order": 1,
+        "project": 4,
+        "type": "url"
+    },
+    {
+        "created_date": "2019-04-10T10:37:10.236Z",
+        "description": "laudantium voluptatibus quos repellat itaque cum enim placeat blanditiis",
+        "extra": null,
+        "id": 25,
+        "modified_date": "2019-04-10T10:37:10.236Z",
+        "name": "minima atque",
+        "order": 1,
+        "project": 7,
+        "type": "number"
+    },
+    {
+        "created_date": "2019-04-10T10:37:10.234Z",
+        "description": "neque voluptates accusamus illum numquam",
+        "extra": null,
+        "id": 24,
+        "modified_date": "2019-04-10T10:37:10.234Z",
+        "name": "numquam",
+        "order": 1,
+        "project": 7,
+        "type": "multiline"
+    },
+    {
+        "created_date": "2019-04-10T10:37:10.231Z",
+        "description": "quibusdam adipisci animi praesentium delectus",
+        "extra": null,
+        "id": 22,
+        "modified_date": "2019-04-10T10:37:10.231Z",
+        "name": "reprehenderit",
+        "order": 1,
+        "project": 7,
+        "type": "url"
+    }
+]
+----

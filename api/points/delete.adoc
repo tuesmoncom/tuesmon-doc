@@ -1,0 +1,5 @@
+To delete points send a DELETE specifying the point id in the url
+
+include::../generated/points-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

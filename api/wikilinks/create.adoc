@@ -1,0 +1,12 @@
+To create wiki links send a POST request with the following data:
+
+- *project* (required): project id
+- *title* (required): string
+- *href* (required): wiki page slug
+- *order*: integer
+
+include::../generated/wiki-links-create-cmd.adoc[]
+
+include::../generated/wiki-links-simple-create-cmd.adoc[]
+
+When the creation is successful, the HTTP response is a 201 Created and the response body is a JSON link:#object-wiki-link-detail[wiki link detail object]

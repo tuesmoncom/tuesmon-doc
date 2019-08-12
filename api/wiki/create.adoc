@@ -1,0 +1,12 @@
+To create wiki pages send a POST request with the following data:
+
+- *project* (required): project id
+- *slug* (required): slug
+- *content* (required): string
+- *watchers*: array of watcher id's
+
+include::../generated/wiki-create-cmd.adoc[]
+
+include::../generated/wiki-simple-create-cmd.adoc[]
+
+When the creation is successful, the HTTP response is a 201 Created and the response body is a JSON link:#object-wiki-detail[wiki page detail object]

@@ -1,0 +1,870 @@
+[source,json]
+----
+{
+    "anon_permissions": [],
+    "blocked_code": null,
+    "created_date": "2019-04-10T10:48:19.714Z",
+    "creation_template": 1,
+    "default_epic_status": 38,
+    "default_issue_status": 52,
+    "default_issue_type": 22,
+    "default_points": 85,
+    "default_priority": 25,
+    "default_severity": 40,
+    "default_task_status": 38,
+    "default_us_status": 43,
+    "description": "Beta description",
+    "epic_custom_attributes": null,
+    "epic_statuses": [
+        {
+            "color": "#999999",
+            "id": 38,
+            "is_closed": false,
+            "name": "New",
+            "order": 1,
+            "project_id": 8,
+            "slug": "new"
+        },
+        {
+            "color": "#ff8a84",
+            "id": 39,
+            "is_closed": false,
+            "name": "Ready",
+            "order": 2,
+            "project_id": 8,
+            "slug": "ready"
+        },
+        {
+            "color": "#ff9900",
+            "id": 40,
+            "is_closed": false,
+            "name": "In progress",
+            "order": 3,
+            "project_id": 8,
+            "slug": "in-progress"
+        },
+        {
+            "color": "#fcc000",
+            "id": 41,
+            "is_closed": false,
+            "name": "Ready for test",
+            "order": 4,
+            "project_id": 8,
+            "slug": "ready-for-test"
+        },
+        {
+            "color": "#669900",
+            "id": 42,
+            "is_closed": true,
+            "name": "Done",
+            "order": 5,
+            "project_id": 8,
+            "slug": "done"
+        }
+    ],
+    "epics_csv_uuid": null,
+    "i_am_admin": true,
+    "i_am_member": true,
+    "i_am_owner": true,
+    "id": 8,
+    "is_backlog_activated": true,
+    "is_contact_activated": true,
+    "is_epics_activated": false,
+    "is_fan": false,
+    "is_featured": false,
+    "is_issues_activated": true,
+    "is_kanban_activated": false,
+    "is_looking_for_people": false,
+    "is_out_of_owner_limits": false,
+    "is_private": true,
+    "is_private_extra_info": {
+        "can_be_updated": true,
+        "reason": null
+    },
+    "is_watcher": true,
+    "is_wiki_activated": true,
+    "issue_custom_attributes": null,
+    "issue_duedates": [
+        {
+            "by_default": true,
+            "color": "#9dce0a",
+            "days_to_due": null,
+            "id": 22,
+            "name": "Default",
+            "order": 1,
+            "project_id": 8
+        },
+        {
+            "by_default": false,
+            "color": "#ff9900",
+            "days_to_due": 14,
+            "id": 23,
+            "name": "Due soon",
+            "order": 2,
+            "project_id": 8
+        },
+        {
+            "by_default": false,
+            "color": "#ff8a84",
+            "days_to_due": 0,
+            "id": 24,
+            "name": "Past due",
+            "order": 3,
+            "project_id": 8
+        }
+    ],
+    "issue_statuses": [
+        {
+            "color": "#8C2318",
+            "id": 52,
+            "is_closed": false,
+            "name": "New",
+            "order": 1,
+            "project_id": 8,
+            "slug": "new"
+        },
+        {
+            "color": "#5E8C6A",
+            "id": 53,
+            "is_closed": false,
+            "name": "In progress",
+            "order": 2,
+            "project_id": 8,
+            "slug": "in-progress"
+        },
+        {
+            "color": "#88A65E",
+            "id": 54,
+            "is_closed": true,
+            "name": "Ready for test",
+            "order": 3,
+            "project_id": 8,
+            "slug": "ready-for-test"
+        },
+        {
+            "color": "#BFB35A",
+            "id": 55,
+            "is_closed": true,
+            "name": "Closed",
+            "order": 4,
+            "project_id": 8,
+            "slug": "closed"
+        },
+        {
+            "color": "#89BAB4",
+            "id": 56,
+            "is_closed": false,
+            "name": "Needs Info",
+            "order": 5,
+            "project_id": 8,
+            "slug": "needs-info"
+        },
+        {
+            "color": "#CC0000",
+            "id": 57,
+            "is_closed": true,
+            "name": "Rejected",
+            "order": 6,
+            "project_id": 8,
+            "slug": "rejected"
+        },
+        {
+            "color": "#666666",
+            "id": 58,
+            "is_closed": false,
+            "name": "Postponed",
+            "order": 7,
+            "project_id": 8,
+            "slug": "postponed"
+        }
+    ],
+    "issue_types": [
+        {
+            "color": "#89BAB4",
+            "id": 22,
+            "name": "Bug",
+            "order": 1,
+            "project_id": 8
+        },
+        {
+            "color": "#ba89a8",
+            "id": 23,
+            "name": "Question",
+            "order": 2,
+            "project_id": 8
+        },
+        {
+            "color": "#89a8ba",
+            "id": 24,
+            "name": "Enhancement",
+            "order": 3,
+            "project_id": 8
+        }
+    ],
+    "issues_csv_uuid": null,
+    "logo_big_url": null,
+    "logo_small_url": null,
+    "looking_for_people_note": "",
+    "max_memberships": null,
+    "members": [
+        {
+            "color": "",
+            "full_name": "Administrator",
+            "full_name_display": "Administrator",
+            "gravatar_id": "64e1b8d34f425d19e1ee2ea7236d3028",
+            "id": 5,
+            "is_active": true,
+            "photo": null,
+            "role": 47,
+            "role_name": "Product Owner",
+            "username": "admin"
+        }
+    ],
+    "milestones": [],
+    "modified_date": "2019-04-10T10:48:20.197Z",
+    "my_homepage": false,
+    "my_permissions": [
+        "modify_task",
+        "modify_epic",
+        "add_task",
+        "admin_roles",
+        "comment_wiki_page",
+        "view_project",
+        "modify_project",
+        "modify_wiki_page",
+        "admin_project_values",
+        "modify_us",
+        "view_epics",
+        "delete_project",
+        "modify_issue",
+        "modify_wiki_link",
+        "add_issue",
+        "delete_milestone",
+        "remove_member",
+        "delete_epic",
+        "delete_wiki_link",
+        "add_epic",
+        "comment_epic",
+        "delete_task",
+        "comment_task",
+        "comment_issue",
+        "view_issues",
+        "add_us",
+        "add_member",
+        "add_wiki_page",
+        "delete_issue",
+        "view_wiki_pages",
+        "view_milestones",
+        "add_milestone",
+        "comment_us",
+        "delete_wiki_page",
+        "view_us",
+        "modify_milestone",
+        "add_wiki_link",
+        "delete_us",
+        "view_wiki_links",
+        "view_tasks"
+    ],
+    "name": "Beta project",
+    "notify_level": 1,
+    "owner": {
+        "big_photo": null,
+        "full_name_display": "Administrator",
+        "gravatar_id": "64e1b8d34f425d19e1ee2ea7236d3028",
+        "id": 5,
+        "is_active": true,
+        "photo": null,
+        "username": "admin"
+    },
+    "points": [
+        {
+            "id": 85,
+            "name": "?",
+            "order": 1,
+            "project_id": 8,
+            "value": null
+        },
+        {
+            "id": 86,
+            "name": "0",
+            "order": 2,
+            "project_id": 8,
+            "value": 0
+        },
+        {
+            "id": 87,
+            "name": "1/2",
+            "order": 3,
+            "project_id": 8,
+            "value": 0.5
+        },
+        {
+            "id": 88,
+            "name": "1",
+            "order": 4,
+            "project_id": 8,
+            "value": 1
+        },
+        {
+            "id": 89,
+            "name": "2",
+            "order": 5,
+            "project_id": 8,
+            "value": 2
+        },
+        {
+            "id": 90,
+            "name": "3",
+            "order": 6,
+            "project_id": 8,
+            "value": 3
+        },
+        {
+            "id": 91,
+            "name": "5",
+            "order": 7,
+            "project_id": 8,
+            "value": 5
+        },
+        {
+            "id": 92,
+            "name": "8",
+            "order": 8,
+            "project_id": 8,
+            "value": 8
+        },
+        {
+            "id": 93,
+            "name": "10",
+            "order": 9,
+            "project_id": 8,
+            "value": 10
+        },
+        {
+            "id": 94,
+            "name": "13",
+            "order": 10,
+            "project_id": 8,
+            "value": 13
+        },
+        {
+            "id": 95,
+            "name": "20",
+            "order": 11,
+            "project_id": 8,
+            "value": 20
+        },
+        {
+            "id": 96,
+            "name": "40",
+            "order": 12,
+            "project_id": 8,
+            "value": 40
+        }
+    ],
+    "priorities": [
+        {
+            "color": "#666666",
+            "id": 24,
+            "name": "Low",
+            "order": 1,
+            "project_id": 8
+        },
+        {
+            "color": "#669933",
+            "id": 25,
+            "name": "Normal",
+            "order": 3,
+            "project_id": 8
+        },
+        {
+            "color": "#CC0000",
+            "id": 26,
+            "name": "High",
+            "order": 5,
+            "project_id": 8
+        }
+    ],
+    "public_permissions": [],
+    "roles": [
+        {
+            "computable": true,
+            "id": 43,
+            "name": "UX",
+            "order": 10,
+            "permissions": [
+                "add_issue",
+                "modify_issue",
+                "delete_issue",
+                "view_issues",
+                "add_milestone",
+                "modify_milestone",
+                "delete_milestone",
+                "view_milestones",
+                "view_project",
+                "add_task",
+                "modify_task",
+                "delete_task",
+                "view_tasks",
+                "add_us",
+                "modify_us",
+                "delete_us",
+                "view_us",
+                "add_wiki_page",
+                "modify_wiki_page",
+                "delete_wiki_page",
+                "view_wiki_pages",
+                "add_wiki_link",
+                "delete_wiki_link",
+                "view_wiki_links",
+                "view_epics",
+                "add_epic",
+                "modify_epic",
+                "delete_epic",
+                "comment_epic",
+                "comment_us",
+                "comment_task",
+                "comment_issue",
+                "comment_wiki_page"
+            ],
+            "project_id": 8,
+            "slug": "ux"
+        },
+        {
+            "computable": true,
+            "id": 44,
+            "name": "Design",
+            "order": 20,
+            "permissions": [
+                "add_issue",
+                "modify_issue",
+                "delete_issue",
+                "view_issues",
+                "add_milestone",
+                "modify_milestone",
+                "delete_milestone",
+                "view_milestones",
+                "view_project",
+                "add_task",
+                "modify_task",
+                "delete_task",
+                "view_tasks",
+                "add_us",
+                "modify_us",
+                "delete_us",
+                "view_us",
+                "add_wiki_page",
+                "modify_wiki_page",
+                "delete_wiki_page",
+                "view_wiki_pages",
+                "add_wiki_link",
+                "delete_wiki_link",
+                "view_wiki_links",
+                "view_epics",
+                "add_epic",
+                "modify_epic",
+                "delete_epic",
+                "comment_epic",
+                "comment_us",
+                "comment_task",
+                "comment_issue",
+                "comment_wiki_page"
+            ],
+            "project_id": 8,
+            "slug": "design"
+        },
+        {
+            "computable": true,
+            "id": 45,
+            "name": "Front",
+            "order": 30,
+            "permissions": [
+                "add_issue",
+                "modify_issue",
+                "delete_issue",
+                "view_issues",
+                "add_milestone",
+                "modify_milestone",
+                "delete_milestone",
+                "view_milestones",
+                "view_project",
+                "add_task",
+                "modify_task",
+                "delete_task",
+                "view_tasks",
+                "add_us",
+                "modify_us",
+                "delete_us",
+                "view_us",
+                "add_wiki_page",
+                "modify_wiki_page",
+                "delete_wiki_page",
+                "view_wiki_pages",
+                "add_wiki_link",
+                "delete_wiki_link",
+                "view_wiki_links",
+                "view_epics",
+                "add_epic",
+                "modify_epic",
+                "delete_epic",
+                "comment_epic",
+                "comment_us",
+                "comment_task",
+                "comment_issue",
+                "comment_wiki_page"
+            ],
+            "project_id": 8,
+            "slug": "front"
+        },
+        {
+            "computable": true,
+            "id": 46,
+            "name": "Back",
+            "order": 40,
+            "permissions": [
+                "add_issue",
+                "modify_issue",
+                "delete_issue",
+                "view_issues",
+                "add_milestone",
+                "modify_milestone",
+                "delete_milestone",
+                "view_milestones",
+                "view_project",
+                "add_task",
+                "modify_task",
+                "delete_task",
+                "view_tasks",
+                "add_us",
+                "modify_us",
+                "delete_us",
+                "view_us",
+                "add_wiki_page",
+                "modify_wiki_page",
+                "delete_wiki_page",
+                "view_wiki_pages",
+                "add_wiki_link",
+                "delete_wiki_link",
+                "view_wiki_links",
+                "view_epics",
+                "add_epic",
+                "modify_epic",
+                "delete_epic",
+                "comment_epic",
+                "comment_us",
+                "comment_task",
+                "comment_issue",
+                "comment_wiki_page"
+            ],
+            "project_id": 8,
+            "slug": "back"
+        },
+        {
+            "computable": false,
+            "id": 47,
+            "name": "Product Owner",
+            "order": 50,
+            "permissions": [
+                "add_issue",
+                "modify_issue",
+                "delete_issue",
+                "view_issues",
+                "add_milestone",
+                "modify_milestone",
+                "delete_milestone",
+                "view_milestones",
+                "view_project",
+                "add_task",
+                "modify_task",
+                "delete_task",
+                "view_tasks",
+                "add_us",
+                "modify_us",
+                "delete_us",
+                "view_us",
+                "add_wiki_page",
+                "modify_wiki_page",
+                "delete_wiki_page",
+                "view_wiki_pages",
+                "add_wiki_link",
+                "delete_wiki_link",
+                "view_wiki_links",
+                "view_epics",
+                "add_epic",
+                "modify_epic",
+                "delete_epic",
+                "comment_epic",
+                "comment_us",
+                "comment_task",
+                "comment_issue",
+                "comment_wiki_page"
+            ],
+            "project_id": 8,
+            "slug": "product-owner"
+        },
+        {
+            "computable": false,
+            "id": 48,
+            "name": "Stakeholder",
+            "order": 60,
+            "permissions": [
+                "add_issue",
+                "modify_issue",
+                "delete_issue",
+                "view_issues",
+                "view_milestones",
+                "view_project",
+                "view_tasks",
+                "view_us",
+                "modify_wiki_page",
+                "view_wiki_pages",
+                "add_wiki_link",
+                "delete_wiki_link",
+                "view_wiki_links",
+                "view_epics",
+                "comment_epic",
+                "comment_us",
+                "comment_task",
+                "comment_issue",
+                "comment_wiki_page"
+            ],
+            "project_id": 8,
+            "slug": "stakeholder"
+        }
+    ],
+    "severities": [
+        {
+            "color": "#666666",
+            "id": 38,
+            "name": "Wishlist",
+            "order": 1,
+            "project_id": 8
+        },
+        {
+            "color": "#669933",
+            "id": 39,
+            "name": "Minor",
+            "order": 2,
+            "project_id": 8
+        },
+        {
+            "color": "#0000FF",
+            "id": 40,
+            "name": "Normal",
+            "order": 3,
+            "project_id": 8
+        },
+        {
+            "color": "#FFA500",
+            "id": 41,
+            "name": "Important",
+            "order": 4,
+            "project_id": 8
+        },
+        {
+            "color": "#CC0000",
+            "id": 42,
+            "name": "Critical",
+            "order": 5,
+            "project_id": 8
+        }
+    ],
+    "slug": "admin-beta-project",
+    "tags": [],
+    "tags_colors": {},
+    "task_custom_attributes": null,
+    "task_duedates": [
+        {
+            "by_default": true,
+            "color": "#9dce0a",
+            "days_to_due": null,
+            "id": 22,
+            "name": "Default",
+            "order": 1,
+            "project_id": 8
+        },
+        {
+            "by_default": false,
+            "color": "#ff9900",
+            "days_to_due": 14,
+            "id": 23,
+            "name": "Due soon",
+            "order": 2,
+            "project_id": 8
+        },
+        {
+            "by_default": false,
+            "color": "#ff8a84",
+            "days_to_due": 0,
+            "id": 24,
+            "name": "Past due",
+            "order": 3,
+            "project_id": 8
+        }
+    ],
+    "task_statuses": [
+        {
+            "color": "#999999",
+            "id": 38,
+            "is_closed": false,
+            "name": "New",
+            "order": 1,
+            "project_id": 8,
+            "slug": "new"
+        },
+        {
+            "color": "#ff9900",
+            "id": 39,
+            "is_closed": false,
+            "name": "In progress",
+            "order": 2,
+            "project_id": 8,
+            "slug": "in-progress"
+        },
+        {
+            "color": "#ffcc00",
+            "id": 40,
+            "is_closed": true,
+            "name": "Ready for test",
+            "order": 3,
+            "project_id": 8,
+            "slug": "ready-for-test"
+        },
+        {
+            "color": "#669900",
+            "id": 41,
+            "is_closed": true,
+            "name": "Closed",
+            "order": 4,
+            "project_id": 8,
+            "slug": "closed"
+        },
+        {
+            "color": "#999999",
+            "id": 42,
+            "is_closed": false,
+            "name": "Needs Info",
+            "order": 5,
+            "project_id": 8,
+            "slug": "needs-info"
+        }
+    ],
+    "tasks_csv_uuid": null,
+    "total_activity": 1,
+    "total_activity_last_month": 1,
+    "total_activity_last_week": 1,
+    "total_activity_last_year": 1,
+    "total_closed_milestones": 0,
+    "total_fans": 0,
+    "total_fans_last_month": 0,
+    "total_fans_last_week": 0,
+    "total_fans_last_year": 0,
+    "total_memberships": 1,
+    "total_milestones": null,
+    "total_story_points": null,
+    "total_watchers": 1,
+    "totals_updated_datetime": "2019-04-10T10:48:20.331Z",
+    "transfer_token": null,
+    "us_duedates": [
+        {
+            "by_default": true,
+            "color": "#9dce0a",
+            "days_to_due": null,
+            "id": 22,
+            "name": "Default",
+            "order": 1,
+            "project_id": 8
+        },
+        {
+            "by_default": false,
+            "color": "#ff9900",
+            "days_to_due": 14,
+            "id": 23,
+            "name": "Due soon",
+            "order": 2,
+            "project_id": 8
+        },
+        {
+            "by_default": false,
+            "color": "#ff8a84",
+            "days_to_due": 0,
+            "id": 24,
+            "name": "Past due",
+            "order": 3,
+            "project_id": 8
+        }
+    ],
+    "us_statuses": [
+        {
+            "color": "#999999",
+            "id": 43,
+            "is_archived": false,
+            "is_closed": false,
+            "name": "New",
+            "order": 1,
+            "project_id": 8,
+            "slug": "new",
+            "wip_limit": null
+        },
+        {
+            "color": "#ff8a84",
+            "id": 44,
+            "is_archived": false,
+            "is_closed": false,
+            "name": "Ready",
+            "order": 2,
+            "project_id": 8,
+            "slug": "ready",
+            "wip_limit": null
+        },
+        {
+            "color": "#ff9900",
+            "id": 45,
+            "is_archived": false,
+            "is_closed": false,
+            "name": "In progress",
+            "order": 3,
+            "project_id": 8,
+            "slug": "in-progress",
+            "wip_limit": null
+        },
+        {
+            "color": "#fcc000",
+            "id": 46,
+            "is_archived": false,
+            "is_closed": false,
+            "name": "Ready for test",
+            "order": 4,
+            "project_id": 8,
+            "slug": "ready-for-test",
+            "wip_limit": null
+        },
+        {
+            "color": "#669900",
+            "id": 47,
+            "is_archived": false,
+            "is_closed": true,
+            "name": "Done",
+            "order": 5,
+            "project_id": 8,
+            "slug": "done",
+            "wip_limit": null
+        },
+        {
+            "color": "#5c3566",
+            "id": 48,
+            "is_archived": true,
+            "is_closed": true,
+            "name": "Archived",
+            "order": 6,
+            "project_id": 8,
+            "slug": "archived",
+            "wip_limit": null
+        }
+    ],
+    "userstories_csv_uuid": null,
+    "userstory_custom_attributes": null,
+    "videoconferences": null,
+    "videoconferences_extra_data": null
+}
+----

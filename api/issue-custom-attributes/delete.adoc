@@ -1,0 +1,5 @@
+To delete issue custom attributes send a DELETE specifying the issue custom attribute id in the url
+
+include::../generated/issues-custom-attributes-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

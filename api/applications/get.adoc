@@ -1,0 +1,5 @@
+To get an application send a GET request specifying the application id in the url
+
+include::../generated/applications-get-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-application-detail[application object]

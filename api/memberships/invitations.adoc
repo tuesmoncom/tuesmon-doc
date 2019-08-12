@@ -1,0 +1,5 @@
+To get an invitation send a GET request specifying the invitation id in the url
+
+include::../generated/invitations-get-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-membership-detail[membership detail object]

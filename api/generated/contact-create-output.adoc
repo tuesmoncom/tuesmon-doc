@@ -1,0 +1,10 @@
+[source,json]
+----
+{
+    "comment": "Comment to admins",
+    "created_date": "2019-04-10T10:48:24+0000",
+    "id": 1,
+    "project": 3,
+    "user": 5
+}
+----

@@ -1,0 +1,10 @@
+To resolve the id of a user story send a GET request with the following parameters:
+
+- *project* (required): the project slug trying to be resolved
+- *us* (required): the user story ref trying to be resolved
+
+include::../generated/resolver-user-story-cmd.adoc[]
+
+The response body is a JSON object containing the project and the user story ids
+
+include::../generated/resolver-user-story-output.adoc[]

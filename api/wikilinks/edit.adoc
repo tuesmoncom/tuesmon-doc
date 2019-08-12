@@ -1,0 +1,6 @@
+To edit wiki links send a PUT or a PATCH specifying the wiki link id in the url.
+In a PATCH request you just need to send the modified data, in a PUT one the whole object must be sent.
+
+include::../generated/wiki-links-patch-cmd.adoc[]
+
+When the creation is successful, the HTTP response is a 200 OK and the response body is a JSON link:#object-wiki-link-detail[wiki link detail object]

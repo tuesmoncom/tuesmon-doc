@@ -1,0 +1,5 @@
+To update the projects order for the logged in user send a POST request with a json list where each element is a json object with two attributes, the project id and the new order
+
+include::../generated/projects-bulk-update-order-cmd.adoc[]
+
+When the update is successful, the HTTP response is a 200 OK and the response body is empty

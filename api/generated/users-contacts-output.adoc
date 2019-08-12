@@ -1,0 +1,25 @@
+[source,json]
+----
+{
+    "big_photo": null,
+    "bio": "",
+    "color": "#40826D",
+    "full_name": "Bego\u00f1a Flores",
+    "full_name_display": "Bego\u00f1a Flores",
+    "gravatar_id": "aed1e43be0f69f07ce6f34a907bc6328",
+    "id": 7,
+    "is_active": true,
+    "lang": "",
+    "photo": null,
+    "roles": [
+        "Back",
+        "Front",
+        "Product Owner",
+        "Stakeholder",
+        "UX"
+    ],
+    "theme": "",
+    "timezone": "",
+    "username": "user1"
+}
+----

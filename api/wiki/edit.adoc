@@ -1,0 +1,6 @@
+To edit wiki pages send a PUT or a PATCH specifying the wiki page id in the url.
+In a PATCH request you just need to send the modified data, in a PUT one the whole object must be sent.
+
+include::../generated/wiki-patch-cmd.adoc[]
+
+When the creation is successful, the HTTP response is a 200 OK and the response body is a JSON link:#object-wiki-detail[wiki page detail object]

@@ -1,0 +1,76 @@
+[source,json]
+----
+{
+    "assigned_points": 206.0,
+    "assigned_points_per_role": {
+        "1": 77.0,
+        "2": 65.0,
+        "3": 32.5,
+        "4": 31.5
+    },
+    "closed_points": 0,
+    "closed_points_per_role": {},
+    "defined_points": 631.5,
+    "defined_points_per_role": {
+        "1": 195.5,
+        "2": 178.0,
+        "3": 110.5,
+        "4": 147.5
+    },
+    "milestones": [
+        {
+            "client-increment": 0,
+            "evolution": 567.0,
+            "name": "Sprint 2019-2-14",
+            "optimal": 567.0,
+            "team-increment": 0
+        },
+        {
+            "client-increment": 0,
+            "evolution": 567.0,
+            "name": "Sprint 2019-3-1",
+            "optimal": 472.5,
+            "team-increment": 0
+        },
+        {
+            "client-increment": 0,
+            "evolution": 567.0,
+            "name": "Future sprint",
+            "optimal": 378.0,
+            "team-increment": 0
+        },
+        {
+            "client-increment": 0,
+            "evolution": null,
+            "name": "Future sprint",
+            "optimal": 283.5,
+            "team-increment": 0
+        },
+        {
+            "client-increment": 0,
+            "evolution": null,
+            "name": "Future sprint",
+            "optimal": 189.0,
+            "team-increment": 0
+        },
+        {
+            "client-increment": 0,
+            "evolution": null,
+            "name": "Future sprint",
+            "optimal": 94.5,
+            "team-increment": 0
+        },
+        {
+            "client-increment": 0,
+            "evolution": null,
+            "name": "Project End",
+            "optimal": 0.0,
+            "team-increment": 0
+        }
+    ],
+    "name": "Project Example 0",
+    "speed": 0,
+    "total_milestones": 6,
+    "total_points": 567.0
+}
+----

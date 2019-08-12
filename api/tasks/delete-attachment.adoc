@@ -1,0 +1,5 @@
+To delete task attachments send a DELETE specifying the task attachment id in the url
+
+include::../generated/tasks-attachments-delete-cmd.adoc[]
+
+When delete succeeded, the HTTP response is a 204 NO CONTENT with an empty body response

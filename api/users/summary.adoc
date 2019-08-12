@@ -1,0 +1,67 @@
+[[users-list]]
+=== List
+include::../users/list.adoc[]
+
+[[users-get]]
+=== Get
+include::../users/get.adoc[]
+
+[[users-me]]
+=== Me
+include::../users/me.adoc[]
+
+[[users-stats]]
+=== Get user stats
+include::../users/stats.adoc[]
+
+[[users-watched]]
+=== Get watched content
+include::../users/watched.adoc[]
+
+[[users-liked]]
+=== Get liked content
+include::../users/liked.adoc[]
+
+[[users-voted]]
+=== Get voted content
+include::../users/voted.adoc[]
+
+[[users-edit]]
+=== Edit
+include::../users/edit.adoc[]
+
+[[users-delete]]
+=== Delete
+include::../users/delete.adoc[]
+
+[[users-get-contacts]]
+=== Get contacts
+include::../users/contacts.adoc[]
+
+[[users-cancel]]
+=== Cancel
+include::../users/cancel.adoc[]
+
+[[users-change-avatar]]
+=== Change avatar
+include::../users/change-avatar.adoc[]
+
+[[users-remove-avatar]]
+=== Remove avatar
+include::../users/remove-avatar.adoc[]
+
+[[users-change-email]]
+=== Change email
+include::../users/change-email.adoc[]
+
+[[users-change-password]]
+=== Change password
+include::../users/change-password.adoc[]
+
+[[users-password-recovery]]
+=== Password recovery
+include::../users/password-recovery.adoc[]
+
+[[users-change-password-from-recovery]]
+=== Change password from recovery
+include::../users/change-password-from-recovery.adoc[]

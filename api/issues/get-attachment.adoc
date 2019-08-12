@@ -1,0 +1,5 @@
+To get an issue attachment send a GET request specifying the issue attachment id in the url
+
+include::../generated/issues-attachment-get-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-attachment-detail[attachment detail object]

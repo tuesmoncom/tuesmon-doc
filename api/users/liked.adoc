@@ -1,0 +1,11 @@
+To get the user liked content send a GET request specifying the user id in the url
+
+include::../generated/users-liked-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a list of JSON link:#object-liked-detail[liked detail object]
+
+The results can be filtered using the following parameters:
+
+- *q*: text to search in the subject of the element
+
+include::../generated/users-filtered-liked-cmd.adoc[]

@@ -1,0 +1,320 @@
+= Tuesmon: Setup FAQs and common bugs
+:toc: left
+:numbered:
+:source-highlighter: pygments
+:pygments-style: friendly
+
+
+FAQs
+----
+
+[[faq-change-domain]]
+How can I change the domain name?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The domain name mainly affects the frontend application, because it needs to comunicate with the
+backend through the domain/public-ip.
+
+To do this you should update the url value `api` on frontend config file `dist/conf/conf.json`.
+Also you should update the domain related configuration on the backend settings file:
+`settings/local.py`.
+
+And finally reload the backend config with: `circusctl reload tuesmon`
+
+
+[[disable-registration]]
+How can I disable registration?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can disableid public registration for external user. To do this you should set
+`` to `False` in `settings/local.py` and disable too in front, in `dist/conf.json` set
+`` ro `false`.
+
+[source,python]
+----
+PUBLIC_REGISTER_ENABLED = False
+----
+
+[source,javascript]
+----
+{
+    (...)
+    "publicRegisterEnabled": false,
+    (...)
+}
+----
+
+If you disable it, only invited users can create accounts in the instance.
+
+
+[[restrict-emails-to-domain]]
+How can I restrict registration to a concrete domain?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can restrict the usage of the platform to a set of valid email domains, so
+this allows you to restrict the registration to users that have a valid company
+email account.
+
+To do this you should update the `USER_EMAIL_ALLOWED_DOMAINS` on your
+`settings/local.py` and add the list of valid domains, for example, if you want
+to allow registrations only from `mycompany.com` and `mycustomer.com`, y can
+set it as:
+
+[source,python]
+----
+USER_EMAIL_ALLOWED_DOMAINS = ["mycompany.com", "mycustomer.com"]
+----
+
+And finally reload the backend config with: `circusctl reload tuesmon`
+
+
+[[faq-restart-backend]]
+How can I restart the backend application?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Backend application is running under circus. To restart any application running
+with circus use the `circusctl` command:
+
+[source,bash]
+----
+circusctl restart tuesmon
+----
+
+In case tuesmon-celery is configured restart it too:
+
+[source,bash]
+----
+circusctl restart tuesmon-celery
+----
+
+
+[[faq-maintain-update]]
+How I can keep my app up to date with the most recent Tuesmon version?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+link:upgrades.html[Check the upgrades instructions].
+
+
+[[faq-add-extra-functionality]]
+How I can add extra functionality to Tuesmon?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Tuesmon allows adding functionality through contrib plugins. The installation of each
+plugin depends on the plugin itself and must be documented in the plugin
+repository.
+
+The current supported plugins are:
+
+* link:https://github.com/tuesmoncom/tuesmon-contrib-cookie-warning[tuesmon-contrib-cookie-warning] A funny cookie warning message
+* link:https://github.com/tuesmoncom/tuesmon-contrib-github-auth[tuesmon-contrib-github-auth]: GitHub Authentication
+* link:https://github.com/tuesmoncom/tuesmon-contrib-gogs[tuesmon-contrib-gogs]: Gogs integration
+* link:https://github.com/tuesmoncom/tuesmon-contrib-hipchat[tuesmon-contrib-hipchat]: HipChat integration
+* link:https://github.com/tuesmoncom/tuesmon-contrib-letschat[tuesmon-contrib-letschat]: Let's Chat integration
+* link:https://github.com/tuesmoncom/tuesmon-contrib-slack[tuesmon-contrib-slack]: Slack integration
+
+
+[[faq-backup]]
+How I can make a backup of the data? And then restore them?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To backup data from your server you just need to store a copy of the database and attachments files. That is, You just need to make a dump of the database and a copy of `tuesmon-back/media directory`.
+
+1. Create dump:
++
+[source,bash]
+----
+pg_dump tuesmon > tuesmon.sql
+----
+
+2. Copy media to a `<dest>`:
++
+[source,bash]
+----
+cp -r tuesmon-back/media <dest>
+----
+
+Then You can restore the backup creating a new database to load the dump and copying the media directory:
+
+[source,bash]
+----
+createdb tuesmon
+psql tuesmon < tuesmon.sql
+cp -r <dest> tuesmon-back/media
+----
+
+
+Common Bugs
+-----------
+
+[[bug-unicodeencodeerror]]
+UnicodeEncodeError
+~~~~~~~~~~~~~~~~~~
+
+If you have some error like this:
+
+----
+  File "/home/tuesmon/tuesmon-back/tuesmon/projects/services/invitations.py", line 17, in send_invitation
+    email.send()
+  File "/home/tuesmon/.virtualenvs/tuesmon/lib/python3.4/site-packages/django/core/mail/message.py", line 286, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/tuesmon/.virtualenvs/tuesmon/lib/python3.4/site-packages/django/core/mail/backends/console.py", line 36, in send_messages
+    self.write_message(message)
+  File "/home/tuesmon/.virtualenvs/tuesmon/lib/python3.4/site-packages/django/core/mail/backends/console.py", line 23, in write_message
+    self.stream.write('%s\n' % msg_data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xfc' in position 487: ordinal not in range(128)
+----
+
+You have to change the locale of your system to someone that support UTF8 characters. To fix it
+add to the tuesmon user `.bashrc` file this lines:
+
+if you have a German Linux machine, you can fix the problem by exporting the locale to `de_DE.UTF-8`:
+
+[source,bash]
+----
+export LANG=de_DE.UTF-8
+export LC_ALL=de_DE.UTF-8
+export LC_TYPE=de_DE.UTF-8
+----
+
+If you are on a US machine, en_US.utf-8 is the encoding of choice. On some newer Linux systems,
+you could also try `en_US.UTF-8` as the locale:
+
+[source,bash]
+----
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LC_TYPE=en_US.UTF-8
+----
+
+Restart the shell, or the machine, and try again.
+
+[[faq-configure-importers]]
+Importers
+---------
+
+You can configure importers for Jira, Github, Asana and Trello in your own instance.
+
+How can I configure Trello importers in my own instance?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For configure Trello, you have to go to https://trello.com/app-key and obtaing
+your API key and your oauth secret, and then, configure it in your settings/local.py:
+
+[source,python]
+----
+IMPORTERS["trello"] = {
+    "active": True,
+    "api_key": "your-trello-api-key",
+    "secret_key": "your-trello-oauth-secret"
+}
+----
+
+And you have to enable in your dist/conf.json in tuesmon-front adding it to importers list:
+
+[source,js]
+----
+{
+    ...
+    importers: ["trello", ...]
+    ...
+}
+----
+
+How can I configure Github importers in my own instance?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For configure Github, you have to go to https://github.com/settings/developers,
+register a new application and obtaing a client id and a client secret, and
+then, configure it in your settings/local.py:
+
+[source,python]
+----
+IMPORTERS["github"] = {
+    "active": True,
+    "client_id": "your-github-client-id",
+    "client_secret": "your-github-client-secret"
+}
+----
+
+And you have to enable in your dist/conf.json in tuesmon-front adding it to importers list:
+
+[source,js]
+----
+{
+    ...
+    importers: ["github", ...]
+    ...
+}
+----
+
+How can I configure Asana importers in my own instance?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For configure Asana, you have to go to your asana account settings, in Apps
+section, and click on "Manage Developer Apps", then you have to "Add new
+application", ensure that the callback url match with your settings, and the
+url of your service with the path /project/new/import/asana.
+After that, you can get your client id and your client secret and configure it
+in your settings/local.py:
+
+[source,python]
+----
+IMPORTERS["asana"] = {
+    "active": True,
+    "callback_url": "{}://{}/project/new/import/asana".format(SITES["front"]["scheme"],
+                                                              SITES["front"]["domain"]),
+    "app_id": "your-asana-client-id",
+    "app_secret": "your-asana-client-secret"
+}
+----
+
+And you have to enable in your dist/conf.json in tuesmon-front adding it to importers list:
+
+[source,js]
+----
+{
+    ...
+    importers: ["asana", ...]
+    ...
+}
+----
+
+How can I configure Jira importers in my own instance?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For configure Jira, you have to go to generate a public of private/public keys
+pair. To do this, you can run the next command:
+
+[source,bash]
+----
+openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048
+openssl rsa -pubout -in private_key.pem -out public_key.pem
+----
+
+Once you have the public and private key, you can configure it in your
+settings/local.py:
+
+[source,python]
+----
+IMPORTERS["jira"] = {
+    "active": True,
+    "consumer_key": "one-key-at-your-election",
+    "cert": file('private_key.pem').read(),  # You can directly copy and paste the content here
+    "pub_cert": file('public_key.pem').read(),  # You can directly copy and paste the content here
+}
+----
+
+And you have to enable in your dist/conf.json in tuesmon-front adding it to importers list:
+
+[source,js]
+----
+{
+    ...
+    importers: ["jira", ...]
+    ...
+}
+----
+
+After that, you have to configure your Jira instance to allow to connect using
+this certificates, you can get more information about it in
+https://manage.tuesmon.com/support/.

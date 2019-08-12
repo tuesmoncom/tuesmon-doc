@@ -1,0 +1,5 @@
+To get a user story send a GET request specifying the user story id in the url
+
+include::../generated/user-stories-get-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-userstory-detail-get[user story detail (GET) object]

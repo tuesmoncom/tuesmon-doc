@@ -1,0 +1,31 @@
+[source,json]
+----
+{
+    "color": null,
+    "created_at": "2019-04-10T10:41:56.211Z",
+    "full_name": null,
+    "gravatar_id": null,
+    "id": 92,
+    "invitation_extra_text": "",
+    "invited_by": {
+        "big_photo": "http://localhost:8000/media/user/5/0/3/a/c8bb5e7bf957c717e5dec39a01c8f10d36dc777039af476d57c637be4634/logo.png.300x300_q85_crop.png?token=XK3I6g%3AbprP-6IMceVlb02jN_V_YEjWDSSDHGHSU5ysxA4w-Y-DXXMwiH_xd4gV-vn8dLPem1cgpCmIiosEJw60B6JOPg",
+        "full_name_display": "BitBucket",
+        "gravatar_id": "e09e540bbe293090c7e38305a272582f",
+        "id": 1,
+        "is_active": false,
+        "photo": "http://localhost:8000/media/user/5/0/3/a/c8bb5e7bf957c717e5dec39a01c8f10d36dc777039af476d57c637be4634/logo.png.80x80_q85_crop.png?token=XK3I6g%3ApeU6pJXyR1FOtrm_IqVt4dPKAPMxkBWTwNBnXtAV0-lBWZHQN0ezIkYkhYmatSxPHGRwfEwOoywvMphf3LKK8Q",
+        "username": "bitbucket-859c1167172a4e57b530e13913122853"
+    },
+    "is_admin": false,
+    "is_owner": null,
+    "is_user_active": false,
+    "photo": null,
+    "project": 1,
+    "project_name": "Project Example 0",
+    "project_slug": "project-0",
+    "role": 3,
+    "role_name": "Front",
+    "user": null,
+    "user_order": 1
+}
+----

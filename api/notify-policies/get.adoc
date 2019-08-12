@@ -1,0 +1,5 @@
+To get a notify policy send a GET request specifying the notify policy id in the url
+
+include::../generated/notify-policies-get-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-notify-policy-detail[notify policy detail object]

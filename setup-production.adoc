@@ -1,0 +1,773 @@
+= Tuesmon: Setup production environment
+:toc: left
+:numbered:
+:source-highlighter: pygments
+:pygments-style: friendly
+
+Introduction
+------------
+This documentation explains how to deploy a full Tuesmon service (each module is part of the Tuesmon platform).
+
+The Tuesmon platform consists of three main components
+and each one has its own dependencies both at compile time and runtime:
+
+- **tuesmon-back** (backend/api)
+- **tuesmon-front-dist** (frontend)
+- **tuesmon-events** (websockets gateway) (optional)
+
+Each component can be run on one unique machine or all of them can be installed to a different machine aswell.
+In this tutorial we will setup everything on one single machine, installing all three Tuesmon components.
+This type of setup should suffice for small/medium production environments.
+
+Overview
+--------
+This tutorial assumes that you are using a clean, recently updated **Ubuntu 16.04** image.
+
+Due to the nature of the frontend, Tuesmon is used through a domain/public-ip, because the frontend application runs in your browser.
+The frontend must be able to communicate with the backend/API, therefore both the frontend and the backend must be accessible through a domain/public-ip too.
+
+**The installation of Tuesmon must be done with a "regular" user, never with root.**
+
+During the tutorial, We assume the following details:
+
+- **ip:** `80.88.23.45`
+- **hostname:** `example.com` (which points to 80.88.23.45)
+- **username:** `tuesmon`
+- **system ram** `>=1GB` (needed for compilation of lxml)
+- **working dir** `/home/tuesmon/` (default for user `tuesmon`)
+
+System Architecture Description
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This is a short system architecture description to help you understand the way Tuesmon is built and works.
+Before you go any further in the installation, make sure you read this description to get a high-level overview.
+
+Tuesmon consists of 2 core (mandatory) modules:
+
+- **tuesmon-back**
+- **tuesmon-front**
+
+**tuesmon-back** is written in django, python3 and serves API endpoints for the frontend.
+
+**tuesmon-front** is written mostly in angularjs and coffeescript and depends on the backend.
+
+The python backend is exposed by gunicorn (port 9001), which is a Python WSGI HTTP server. The process manager is systemd, which runs gunicorn and tuesmon-back together.
+Technically the backend communicates with the database(postgresql) and through the frontend, it allows the user to use the features of Tuesmon.
+The communication between the front- and backend is done using APIs.
+
+The backend is then publicly exposed by nginx which acts as a reverse-proxy for this case.
+The frontend is located in the `dist` folder and is exposed publicly by nginx which acts as a static webserver for this case.
+
+
+Prerequisites
+-------------
+Tuesmon consists of three modules and each of them require different packages and third-party packages.
+This sections collects the required packages for a successful Tuesmon installation and configuration.
+In this section we will install all dependencies for all modules, including the optional modules and services.
+
+.Essential packages:
+[source,bash]
+----
+sudo apt-get update
+sudo apt-get install -y build-essential binutils-doc autoconf flex bison libjpeg-dev
+sudo apt-get install -y libfreetype6-dev zlib1g-dev libzmq3-dev libgdbm-dev libncurses5-dev
+sudo apt-get install -y automake libtool curl git tmux gettext
+sudo apt-get install -y nginx
+sudo apt-get install -y rabbitmq-server redis-server
+----
+
+.The component `tuesmon-back` uses postgresql (>= 9.4) as database:
+[source,bash]
+----
+sudo apt-get install -y postgresql-9.5 postgresql-contrib-9.5
+sudo apt-get install -y postgresql-doc-9.5 postgresql-server-dev-9.5
+----
+
+.Python (3) and virtualenvwrapper must be installed along with a few third-party libraries:
+[source,bash]
+----
+sudo apt-get install -y python3 python3-pip python3-dev virtualenvwrapper
+sudo apt-get install -y libxml2-dev libxslt-dev
+sudo apt-get install -y libssl-dev libffi-dev
+----
+
+[NOTE]
+**virtualenvwrapper** helps keeping the system clean of third party libraries, installed
+with the language package manager by installing these packages in an isolated virtual environment.
+
+Restart the shell or run `bash` to reload the bash environment with the new virtualenvwrapper
+variables and functions.
+
+**This step is mandatory before continuing the installation!**
+
+
+.Create a user named `tuesmon`, and give it root permissions
+[source,bash]
+----
+sudo adduser tuesmon
+sudo adduser tuesmon sudo
+sudo su tuesmon
+cd ~
+----
+
+[NOTE]
+Do **not** change to root user.
+The installation must be done with the `tuesmon` user.
+
+Configuring Dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+.Configure postgresql with the initial user and database:
+[source,bash]
+----
+sudo -u postgres createuser tuesmon
+sudo -u postgres createdb tuesmon -O tuesmon --encoding='utf-8' --locale=en_US.utf8 --template=template0
+
+----
+
+.Create a user named `tuesmon`, and a virtualhost for RabbitMQ (tuesmon-events)
+[source,bash]
+----
+sudo rabbitmqctl add_user tuesmon PASSWORD_FOR_EVENTS
+sudo rabbitmqctl add_vhost tuesmon
+sudo rabbitmqctl set_permissions -p tuesmon tuesmon ".*" ".*" ".*"
+----
+
+
+Backend configuration
+---------------------
+This section helps configuring the backend (api) Tuesmon service and its dependencies.
+
+.Download the code
+[source,bash]
+----
+cd ~
+git clone https://github.com/tuesmoncom/tuesmon-back.git tuesmon-back
+cd tuesmon-back
+git checkout stable
+----
+
+.Create new virtualenv named **tuesmon**
+[source,bash]
+----
+mkvirtualenv -p /usr/bin/python3 tuesmon
+----
+
+.Install dependencies
+[source, bash]
+----
+pip install -r requirements.txt
+----
+
+.Populate the database with initial basic data
+[source,bash]
+----
+python manage.py migrate --noinput
+python manage.py loaddata initial_user
+python manage.py loaddata initial_project_templates
+python manage.py compilemessages
+python manage.py collectstatic --noinput
+----
+
+This creates the administrator account. The login credentials are **admin** with password **123123**.
+
+**OPTIONAL:**
+If you would like to have some example data loaded into Tuesmon, execute the following command,
+which populates the database with sample projects and random data (useful for demos):
+
+[source,bash]
+----
+python manage.py sample_data
+----
+
+To finish the setup of **tuesmon-back**, create the initial configuration file
+for proper static/media file resolution, optionally with email sending support:
+
+.Copy-paste the following config into `~/tuesmon-back/settings/local.py` and update it with your own details:
+
+[source,python]
+----
+from .common import *
+
+MEDIA_URL = "http://example.com/media/"
+STATIC_URL = "http://example.com/static/"
+SITES["front"]["scheme"] = "http"
+SITES["front"]["domain"] = "example.com"
+
+SECRET_KEY = "theveryultratopsecretkey"
+
+DEBUG = False
+PUBLIC_REGISTER_ENABLED = True
+
+DEFAULT_FROM_EMAIL = "no-reply@example.com"
+SERVER_EMAIL = DEFAULT_FROM_EMAIL
+
+#CELERY_ENABLED = True
+
+EVENTS_PUSH_BACKEND = "tuesmon.events.backends.rabbitmq.EventsPushBackend"
+EVENTS_PUSH_BACKEND_OPTIONS = {"url": "amqp://tuesmon:PASSWORD_FOR_EVENTS@localhost:5672/tuesmon"}
+
+# Uncomment and populate with proper connection parameters
+# for enable email sending. EMAIL_HOST_USER should end by @domain.tld
+#EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+#EMAIL_USE_TLS = False
+#EMAIL_HOST = "localhost"
+#EMAIL_HOST_USER = ""
+#EMAIL_HOST_PASSWORD = ""
+#EMAIL_PORT = 25
+
+# Uncomment and populate with proper connection parameters
+# for enable github login/singin.
+#GITHUB_API_CLIENT_ID = "yourgithubclientid"
+#GITHUB_API_CLIENT_SECRET = "yourgithubclientsecret"
+----
+
+Verification
+~~~~~~~~~~~~
+(Optional)
+To make sure that everything works, issue the following command to run the backend in development mode for a test:
+
+[source,bash]
+----
+workon tuesmon
+python manage.py runserver
+----
+
+Then you must be able to see a json representing the list of endpoints at the url: http://localhost:8000/api/v1/ .
+
+
+[NOTE]
+At this stage the backend has been installed successfully, but to run the python backend in production,
+an application server must be configured first. The details for this are explained later in this doc.
+
+Frontend installation
+---------------------
+Download the code from Github:
+
+.Download the code
+[source,bash]
+----
+cd ~
+git clone https://github.com/tuesmoncom/tuesmon-front-dist.git tuesmon-front-dist
+cd tuesmon-front-dist
+git checkout stable
+----
+
+.Copy the example config file:
+[source,bash]
+----
+cp ~/tuesmon-front-dist/dist/conf.example.json ~/tuesmon-front-dist/dist/conf.json
+----
+
+.Edit the example configuration following the pattern below (replace with your own details):
+[source,json]
+----
+{
+	"api": "http://example.com/api/v1/",
+	"eventsUrl": "ws://example.com/events",
+	"debug": "true",
+	"publicRegisterEnabled": true,
+	"feedbackEnabled": true,
+	"privacyPolicyUrl": null,
+	"termsOfServiceUrl": null,
+	"GDPRUrl": null,
+	"maxUploadFileSize": null,
+	"contribPlugins": []
+}
+----
+
+[NOTE]
+Be careful using copy-paste from browser to avoid `http://` duplication.
+
+Having **tuesmon-front-dist** downloaded and configured is insufficient. The next step is to expose the code
+(in **dist** directory) under a static file web server.
+In this tutorial We use **nginx** as a static file web server and reverse-proxy.
+The configuration of nginx is explained later.
+
+[[tuesmon-events]]
+Events installation
+-------------------
+
+**This step is optional and can be skipped**
+
+Tuesmon-events is the Tuesmon websocket server, it allows tuesmon-front to show realtime changes in the backlog, taskboard, kanban and issues listing.
+Tuesmon-events use rabbitmq (the message broker).
+
+Download tuesmon-events from Github and install its dependencies:
+
+.Download the code
+[source,bash]
+----
+cd ~
+git clone https://github.com/tuesmoncom/tuesmon-events.git tuesmon-events
+cd tuesmon-events
+----
+
+.Install nodejs
+[source,bash]
+----
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+----
+
+.Install the javascript dependencies needed
+[source,bash]
+----
+npm install
+----
+
+.Copy and edit the config.json file. Update with your rabbitmq uri and the secret key.
+[source,bash]
+----
+cp config.example.json config.json
+----
+
+.Your config.json should be like:
+[source,json]
+----
+{
+    "url": "amqp://tuesmon:PASSWORD_FOR_EVENTS@localhost:5672/tuesmon",
+    "secret": "theveryultratopsecretkey",
+    "webSocketServer": {
+        "port": 8888
+    }
+}
+----
+
+The 'secret' in `config.json` must be the same as the "SECRET_KEY" in `~/tuesmon-back/settings/local.py`
+
+Add tuesmon-events to systemd configuration.
+
+.Copy-paste the code below into `/etc/systemd/system/tuesmon_events.service`
+[source,ini]
+----
+[Unit]
+Description=tuesmon_events
+After=network.target
+
+[Service]
+User=tuesmon
+WorkingDirectory=/home/tuesmon/tuesmon-events
+ExecStart=/bin/bash -c "node_modules/coffeescript/bin/coffee index.coffee"
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=default.target
+----
+
+.Reload the systemd configurations:
+[source,bash]
+----
+sudo systemctl daemon-reload
+sudo systemctl start tuesmon_events
+sudo systemctl enable tuesmon_events
+----
+
+[[start-and-expose]]
+Start and Expose Tuesmon
+----------------------
+
+Before moving further, make sure you installed  **tuesmon-back** and **tuesmon-front-dist**, however, having installed them is insufficient to run Tuesmon.
+
+**tuesmon-back** should run under an application server, which in turn, should be executed and monitored
+by a process manager. For this task we will use **gunicorn** and **systemd** respectively.
+
+Both **tuesmon-front-dist** and **tuesmon-back** must be exposed to the outside using a proxy/static-file
+web server. For this purpose, Tuesmon uses **nginx**.
+
+
+[[systemd-and-gunicorn]]
+systemd and gunicorn
+~~~~~~~~~~~~~~~~~~~~
+
+Systemd is the process supervisor used by Ubuntu and Tuesmon uses it to execute **gunicorn**.
+Systemd is not only for executing processes, but it also has utils for monitoring them, collecting logs, and
+restarting processes if something goes wrong, and also for starting processes on system boot.
+
+
+.Initial Tuesmon configuration for systemd in `/etc/systemd/system/tuesmon.service`
+[source,ini]
+----
+[Unit]
+Description=tuesmon_back
+After=network.target
+
+[Service]
+User=tuesmon
+Environment=PYTHONUNBUFFERED=true
+WorkingDirectory=/home/tuesmon/tuesmon-back
+ExecStart=/home/tuesmon/.virtualenvs/tuesmon/bin/gunicorn --workers 4 --timeout 60 -b 127.0.0.1:8001 tuesmon.wsgi
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=default.target
+----
+
+Final step is reloading systemd daemon and starting tuesmon service:
+
+[source,bash]
+----
+sudo systemctl daemon-reload
+sudo systemctl start tuesmon
+sudo systemctl enable tuesmon
+----
+
+.To verify that the services are running, issue:
+[source,bash]
+----
+sudo systemctl status tuesmon
+----
+
+[[nginx]]
+Nginx
+~~~~~
+
+Nginx is used as a static file web server to serve **tuesmon-front-dist** and send proxy requests to **tuesmon-back**.
+
+.Remove the default nginx config file to avoid collision with Tuesmon:
+[source,bash]
+----
+sudo rm /etc/nginx/sites-enabled/default
+----
+
+.Create the logs folder (mandatory)
+[source,bash]
+----
+mkdir -p ~/logs
+----
+
+.To create a new nginx virtualhost for Tuesmon, create and edit the `/etc/nginx/conf.d/tuesmon.conf` file, as follows:
+[source,nginx]
+----
+server {
+    listen 80 default_server;
+    server_name _;
+
+    large_client_header_buffers 4 32k;
+    client_max_body_size 50M;
+    charset utf-8;
+
+    access_log /home/tuesmon/logs/nginx.access.log;
+    error_log /home/tuesmon/logs/nginx.error.log;
+
+    # Frontend
+    location / {
+        root /home/tuesmon/tuesmon-front-dist/dist/;
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Backend
+    location /api {
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Scheme $scheme;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:8001/api;
+        proxy_redirect off;
+    }
+
+    # Admin access (/admin/)
+    location /admin {
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Scheme $scheme;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:8001$request_uri;
+        proxy_redirect off;
+    }
+
+    # Static files
+    location /static {
+        alias /home/tuesmon/tuesmon-back/static;
+    }
+
+    # Media files
+    location /media {
+        alias /home/tuesmon/tuesmon-back/media;
+    }
+
+    # Events
+    location /events {
+        proxy_pass http://127.0.0.1:8888/events;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_connect_timeout 7d;
+        proxy_send_timeout 7d;
+        proxy_read_timeout 7d;
+	}
+}
+----
+
+.Issue the following command to verify the nginx configuration and to track any error in the service:
+[source,bash]
+----
+sudo nginx -t
+----
+
+Finally, restart nginx:
+[source,bash]
+----
+sudo systemctl restart nginx
+----
+
+**Now you should have the service up and running on: `http://example.com/`**
+
+
+Optional Components and Settings
+--------------------------------
+The following items are completely optional and are up for you to configure them.
+Tuesmon-events module is also an optional feature, but its installation is part of this tutorial.
+
+Async tasks (Optional)
+~~~~~~~~~~~~~~~~~~~~~~
+
+The default behavior in Tuesmon is to do all tasks in a synchronous way, but some of them
+can be completely asynchronous (for example webhooks or import/export).
+To do this, you have to configure and install the celery service requirements.
+
+There is just an exception related to exported files, if your instance works in asynchronous mode the exported project files will be
+automatically removed from the storage after 24 hours, if not those media files won't be automatically removed (tuesmon-back doesn't really know anything about
+the existence of those files).
+
+Install `rabbitmq-server` and `redis-server`:
+
+[source,bash]
+----
+sudo apt-get install -y rabbitmq-server redis-server
+----
+
+To run celery with Tuesmon, include the following code line in the `local.py` file:
+
+[source,python]
+----
+CELERY_ENABLED = True
+----
+
+You can configure other broker or results backend. If you need more info about it, check the celery documentation web page:
+http://docs.celeryproject.org/en/latest/index.html
+
+Once you have configured celery on Tuesmon, you have to add celery to systemd configuration. See link:#systemd-and-gunicorn[Systemd and gunicorn] section.
+
+.Tuesmon celery configuration block for systemd on `/etc/systemd/system/tuesmon_celery.service`
+[source,ini]
+----
+[Unit]
+Description=tuesmon_celery
+After=network.target
+
+[Service]
+User=tuesmon
+Environment=PYTHONUNBUFFERED=true
+WorkingDirectory=/home/tuesmon/tuesmon-back
+ExecStart=/home/tuesmon/.virtualenvs/tuesmon/bin/celery -A tuesmon worker --concurrency 4 -l INFO
+Restart=always
+RestartSec=3
+ExecStop=/bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=default.target
+----
+
+Reload the circus configuration, restart tuesmon, then start tuesmon-celery:
+
+[source,bash]
+----
+sudo systemctl daemon-reload
+sudo systemctl start tuesmon_celery
+sudo systemctl enable tuesmon_celery
+sudo systemctl restart tuesmon
+----
+
+
+Tuesmon Hardening - HTTPS
+~~~~~~~~~~~~~~~~~~~~~~~
+Follow the instructions in this section to server Tuesmon under HTTPS.
+
+Place the SSL certificates in `/etc/nginx/ssl`. It is recommended to replace
+the original configuration for `port 80` so that users are redirected to the HTTPS
+version automatically.
+
+Second we need to generate a stronger GHE parameter:
+[source,nginx]
+----
+cd /etc/ssl
+sudo openssl dhparam -out dhparam.pem 4096
+----
+
+.Update the configuration in `/etc/nginx/conf.d/tuesmon.conf`
+(Tuesmon-events not included)
+[source,nginx]
+----
+server {
+    listen 80 default_server;
+    server_name _;
+    return 301 https://$server_name$request_uri;
+}
+
+server {
+    listen 443 ssl default_server;
+    server_name _;
+
+    large_client_header_buffers 4 32k;
+    client_max_body_size 50M;
+    charset utf-8;
+
+    index index.html;
+
+    # Frontend
+    location / {
+        root /home/tuesmon/tuesmon-front-dist/dist/;
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Backend
+    location /api {
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Scheme $scheme;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:8001/api;
+        proxy_redirect off;
+    }
+
+    # Admin access (/admin/)
+    location /admin {
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Scheme $scheme;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:8001$request_uri;
+        proxy_redirect off;
+    }
+
+    # Static files
+    location /static {
+        alias /home/tuesmon/tuesmon-back/static;
+    }
+
+    # Media files
+    location /media {
+        alias /home/tuesmon/tuesmon-back/media;
+    }
+
+	# Events
+	location /events {
+        proxy_pass http://127.0.0.1:8888/events;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_connect_timeout 7d;
+        proxy_send_timeout 7d;
+        proxy_read_timeout 7d;
+	}
+
+    # SSL
+    add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
+    add_header Public-Key-Pins 'pin-sha256="klO23nT2ehFDXCfx3eHTDRESMz3asj1muO+4aIdjiuY="; pin-sha256="633lt352PKRXbOwf4xSEa1M517scpD3l5f79xMD9r9Q="; max-age=2592000; includeSubDomains';
+
+    ssl on;
+    ssl_certificate /etc/nginx/ssl/example.com/ssl-bundle.crt;
+    ssl_certificate_key /etc/nginx/ssl/example.com/example_com.key;
+    ssl_session_timeout 5m;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!3DES:!MD5:!PSK';
+    ssl_session_cache shared:SSL:10m;
+    ssl_dhparam /etc/ssl/dhparam.pem;
+    ssl_stapling on;
+    ssl_stapling_verify on;
+
+}
+----
+
+Before activating the HTTPS site, the configuration for the frontend and the backend must be updated.
+Change the scheme from `http` to `https` throughout the configurations.
+
+.Update `~/tuesmon-back/settings/local.py`
+[source,python]
+----
+from .common import *
+
+MEDIA_URL = "https://example.com/media/"
+STATIC_URL = "https://example.com/static/"
+SITES["front"]["scheme"] = "https"
+SITES["front"]["domain"] = "example.com"
+
+SECRET_KEY = "theveryultratopsecretkey"
+
+DEBUG = False
+PUBLIC_REGISTER_ENABLED = True
+
+DEFAULT_FROM_EMAIL = "no-reply@example.com"
+SERVER_EMAIL = DEFAULT_FROM_EMAIL
+
+# Uncomment and populate with proper connection parameters
+# for enable email sending.
+#EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+#EMAIL_USE_TLS = False
+#EMAIL_HOST = "localhost"
+#EMAIL_HOST_USER = ""
+#EMAIL_HOST_PASSWORD = ""
+#EMAIL_PORT = 25
+
+# Uncomment and populate with proper connection parameters
+# for enable github login/singin.
+#GITHUB_API_CLIENT_ID = "yourgithubclientid"
+#GITHUB_API_CLIENT_SECRET = "yourgithubclientsecret"
+----
+
+
+.Update `~/tuesmon-front-dist/dist/conf.json`
+[source,json]
+----
+{
+    "api": "https://example.com/api/v1/",
+    "eventsUrl": "wss://example.com/events",
+    "debug": "true",
+    "publicRegisterEnabled": true,
+    "feedbackEnabled": true,
+    "privacyPolicyUrl": null,
+    "termsOfServiceUrl": null,
+    "maxUploadFileSize": null
+}
+----
+
+.Restart tuesmon services after updating the configuration:
+[source,bash]
+----
+sudo systemctl restart 'tuesmon*'
+----
+
+.Reload the nginx configuration:
+[source,bash]
+----
+sudo systemctl reload nginx
+----
+
+Troubleshooting
+---------------
+
+.If you face any issue during or after installing Tuesmon, please collect the content of the following files:
+
+- `/etc/nginx/conf.d/tuesmon.conf`
+- `/etc/systemd/system/tuesmon.service`
+- `/etc/systemd/system/tuesmon_celery.service`
+- `/etc/systemd/system/tuesmon_events.service`
+- `/home/tuesmon/tuesmon-back/settings/local.py`
+- `/home/tuesmon/tuesmon-front-dist/dist/conf.json`
+- `/home/tuesmon/tuesmon-events/config.json`
+- The result of command `sudo systemctl status 'tuesmon*'`
+
+.Issue the following commands to check the status of services used by Tuesmon:
+[source,bash]
+----
+sudo systemctl status nginx
+sudo systemctl status rabbitmq-server
+sudo systemctl status postgresql
+----
+Check If you see any error in the service statuses and make sure all service status is `Active: active (running)`.

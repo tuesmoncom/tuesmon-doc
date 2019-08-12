@@ -1,0 +1,9 @@
+To create memberships/invitations send a POST request with the following data:
+
+- *project* (required)
+- *role* (required): Role to the membership
+- *username* (required): user username or email
+
+include::../generated/memberships-create-cmd.adoc[]
+
+When the creation is successful, the HTTP response is a 201 Created and the response body is a JSON link:#object-membership-detail[membership detail object]

@@ -1,0 +1,5 @@
+To get a project tag colors stats send a GET request specifying the project id in the url
+
+include::../generated/projects-tags-colors-cmd.adoc[]
+
+The HTTP response is a 200 OK and the response body is a JSON link:#object-project-tags-colors-detail[project tag colors object]
